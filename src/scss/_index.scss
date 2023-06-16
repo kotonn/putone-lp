@@ -139,7 +139,7 @@ code {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -437,7 +437,7 @@ code {
 
 .music {
   @media screen and (max-width: 768px) {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     object-fit: cover;
     position: absolute;
@@ -452,7 +452,7 @@ code {
     background-attachment: fixed;
   }
   @media screen and (min-width: 768px) {
-    height: 80%;
+    height: 80vh;
     width: 80%;
     object-fit: cover;
     position: absolute;
@@ -583,7 +583,7 @@ code {
 
 .back {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -853,7 +853,7 @@ code {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     padding: 7rem 3rem;
     background-color: #ffb800;
     filter: brightness(0.8);
@@ -867,7 +867,7 @@ code {
     align-items: center;
     justify-content: center;
     width: 60%;
-    height: 100%;
+    height: 100vh;
     padding: 7rem 5rem;
     margin-top: 20rem;
     background-color: #ffb800;
@@ -883,7 +883,7 @@ code {
     align-items: center;
     justify-content: center;
     width: 60%;
-    height: 100%;
+    height: 100vh;
     padding: 7rem 5rem;
     margin-top: 55rem;
     background-color: #ffb800;
@@ -899,7 +899,7 @@ code {
     align-items: center;
     justify-content: center;
     width: 60%;
-    height: 100%;
+    height: 100vh;
     padding: 7rem 5rem;
     margin-top: 55rem;
     background-color: #ffb800;
@@ -951,7 +951,7 @@ code {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     width: 50%;
     padding: 7rem 0;
     padding-left: 7rem;
@@ -965,7 +965,7 @@ code {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     width: 50%;
     padding: 7rem 5rem;
     margin-top: 55rem;
@@ -979,7 +979,7 @@ code {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     width: 40%;
     padding: 7rem 5rem;
     margin-top: 55rem;
@@ -1023,7 +1023,7 @@ code {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     padding: 7rem 3rem;
     background-color: #ffb800;
     filter: brightness(0.8);
@@ -1037,7 +1037,7 @@ code {
     align-items: center;
     justify-content: center;
     width: 60%;
-    height: 100%;
+    height: 100vh;
     padding: 7rem 5rem;
     margin-top: 30rem;
     background-color: #ffb800;
@@ -1053,7 +1053,7 @@ code {
     align-items: center;
     justify-content: center;
     width: 60%;
-    height: 100%;
+    height: 100vh;
     padding: 7rem 5rem;
     margin-top: 65rem;
     background-color: #ffb800;
@@ -1069,7 +1069,7 @@ code {
     align-items: center;
     justify-content: center;
     width: 60%;
-    height: 100%;
+    height: 100vh;
     padding: 7rem 5rem;
     margin-top: 65rem;
     background-color: #ffb800;
@@ -1121,7 +1121,7 @@ code {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     width: 50%;
     padding: 7rem 0;
     padding-right: 7rem;
@@ -1135,7 +1135,7 @@ code {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     width: 50%;
     padding: 7rem 5rem;
     margin-top: 65rem;
@@ -1149,7 +1149,7 @@ code {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     width: 40%;
     padding: 7rem 5rem;
     margin-top: 65rem;
@@ -1193,7 +1193,7 @@ code {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     padding: 7rem 3rem;
     background-color: #ffb800;
     filter: brightness(0.8);
@@ -1207,7 +1207,7 @@ code {
     align-items: center;
     justify-content: center;
     width: 60%;
-    height: 100%;
+    height: 100vh;
     padding: 7rem 5rem;
     margin-top: 40rem;
     background-color: #ffb800;
@@ -1223,7 +1223,7 @@ code {
     align-items: center;
     justify-content: center;
     width: 60%;
-    height: 100%;
+    height: 100vh;
     padding: 7rem 5rem;
     margin-top: 75rem;
     background-color: #ffb800;
@@ -1239,7 +1239,7 @@ code {
     align-items: center;
     justify-content: center;
     width: 60%;
-    height: 100%;
+    height: 100vh;
     padding: 7rem 5rem;
     margin-top: 75rem;
     background-color: #ffb800;
@@ -1291,7 +1291,7 @@ code {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     width: 50%;
     padding: 7rem 0;
     padding-left: 7rem;
@@ -1305,7 +1305,7 @@ code {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     width: 50%;
     padding: 7rem 5rem;
     margin-top: 75rem;
@@ -1319,7 +1319,7 @@ code {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     width: 40%;
     padding: 7rem 5rem;
     margin-top: 75rem;
@@ -1385,7 +1385,7 @@ code {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     margin-top: 60rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -1402,7 +1402,7 @@ code {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     margin-top: 50rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -1419,7 +1419,7 @@ code {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     margin-top: 90rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -1436,7 +1436,7 @@ code {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     margin-top: 90rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -1505,7 +1505,7 @@ code {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 100vh;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -1514,7 +1514,7 @@ code {
     align-items: center;
     flex-direction: row;
     width: 100%;
-    height: 100%;
+    height: 100vh;
   }
 
   @media screen and (min-width: 1025px) and (max-width: 1366px) {
@@ -1523,7 +1523,7 @@ code {
     align-items: center;
     flex-direction: row;
     width: 100%;
-    height: 100%;
+    height: 100vh;
   }
 
   @media screen and (min-width: 1367px) {
@@ -1532,7 +1532,7 @@ code {
     align-items: center;
     flex-direction: row;
     width: 100%;
-    height: 80%;
+    height: 80vh;
   }
 }
 
