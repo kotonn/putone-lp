@@ -1710,11 +1710,11 @@ code {
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 767px) {
-    position: fixed;
-    top: 15vh;
+    position: absolute;
+    top: 10vh;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
-    position: fixed;
+    position: absolute;
     top: 10vh;
   }
   @media screen and (min-width: 1025px) and (max-width: 1366px) {
@@ -1835,6 +1835,7 @@ code {
 
 .signup-button {
   border: 1px solid;
+  color: #000;
   background-color: #fff;
   &:hover {
     background-color: #000;
@@ -1910,7 +1911,7 @@ code {
     height: auto;
     max-height: 35vh;
     object-fit: cover;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     border-radius: 2rem 2rem 0 0;
   }
@@ -1919,7 +1920,7 @@ code {
     height: auto;
     max-height: 40vh;
     object-fit: cover;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     border-radius: 2rem 2rem 0 0;
   }
