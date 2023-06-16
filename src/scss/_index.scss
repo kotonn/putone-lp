@@ -94,6 +94,7 @@ code {
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
     color: #fff;
     font-size: 1.7rem;
+    font-weight: 500;
     margin-bottom: 2rem;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -138,12 +139,12 @@ code {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 1000;
 }
 
@@ -183,8 +184,8 @@ code {
 }
 
 .typist {
-  font-family: 'Train One', cursive;
-  font-weight: 300;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 500;
   color: #000;
   min-height: 10rem;
   display: flex;
@@ -218,7 +219,7 @@ code {
   @media screen and (max-width: 767px) {
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
     color: #ffb800;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.8);
     border-color: #ffb800;
     border-radius: 1rem;
     font-size: 1.5rem;
@@ -358,7 +359,8 @@ code {
 
 .humberger-menu {
   position: absolute;
-  right: 0;
+  top: 2rem;
+  right: 2rem;
   transition: 0.5s;
 }
 
@@ -606,7 +608,7 @@ code {
       rgba(255, 184, 0, 1) 90%,
       rgba(255, 184, 0, 0) 10%
     );
-    border-radius: 5rem 5rem 0.5rem 0.5rem;
+    border-radius: 5rem 5rem 1rem 1rem;
     filter: brightness(0.8);
     position: absolute;
     left: 0;
@@ -625,7 +627,7 @@ code {
       rgba(255, 184, 0, 1) 90%,
       rgba(255, 184, 0, 0) 10%
     );
-    border-radius: 5rem 5rem 0.5rem 0.5rem;
+    border-radius: 5rem 5rem 1rem 1rem;
     filter: brightness(0.8);
     position: absolute;
     left: 0;
@@ -738,9 +740,9 @@ code {
   object-fit: cover;
   @media screen and (max-width: 767px) {
     margin-top: 3rem;
-    border-bottom: 2px solid #ffb800;
-    // border-radius: 1rem 1rem 0 0;
+    border-radius: 0 0 1rem 1rem;
     width: 100vw;
+    height: 50vh;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     margin-top: 3rem;
@@ -766,7 +768,8 @@ code {
   text-align: center;
   @media screen and (max-width: 767px) {
     font-size: 2rem;
-    margin: 0 0 5rem 0;
+    margin: 0 0 3rem 0;
+    width: 90vw;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     font-size: 2.5rem;
@@ -787,8 +790,10 @@ code {
   text-align: center;
   letter-spacing: 0.3rem;
   color: #000;
+  text-align: left;
   @media screen and (max-width: 767px) {
     font-size: 1.3rem;
+    width: 70vw;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     font-size: 1.5rem;
@@ -857,9 +862,11 @@ code {
     padding: 7rem 3rem;
     background-color: #ffb800;
     filter: brightness(0.8);
+    border: 10px solid #000;
+    border-radius: 1rem;
     position: absolute;
     right: 0;
-    margin-top: 20rem;
+    margin-top: 10rem;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     display: flex;
@@ -915,6 +922,7 @@ code {
     width: 250px;
     height: auto;
     object-fit: cover;
+    margin-top: 1rem;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -993,6 +1001,7 @@ code {
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   text-align: left;
   letter-spacing: 0.3rem;
+  margin-right: 0.5rem;
   @media screen and (max-width: 767px) {
     font-size: 1.5rem;
     color: #000;
@@ -1027,9 +1036,11 @@ code {
     padding: 7rem 3rem;
     background-color: #ffb800;
     filter: brightness(0.8);
+    border: 10px solid #000;
+    border-radius: 1rem;
     position: absolute;
     right: 0;
-    margin-top: 30rem;
+    margin-top: 20rem;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     display: flex;
@@ -1085,6 +1096,7 @@ code {
     width: 250px;
     height: auto;
     object-fit: cover;
+    margin-top: 1rem;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -1197,9 +1209,11 @@ code {
     padding: 7rem 3rem;
     background-color: #ffb800;
     filter: brightness(0.8);
+    border: 10px solid #000;
+    border-radius: 1rem;
     position: absolute;
     right: 0;
-    margin-top: 40rem;
+    margin-top: 30rem;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     display: flex;
@@ -1255,6 +1269,7 @@ code {
     width: 250px;
     height: auto;
     object-fit: cover;
+    margin-top: 1rem;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -1378,7 +1393,7 @@ code {
 }
 
 .footer-text-container {
-  color: #fff;
+  color: #000;
   @media screen and (max-width: 767px) {
     display: flex;
     justify-content: center;
@@ -1386,12 +1401,12 @@ code {
     flex-direction: column;
     width: 100%;
     height: 100vh;
-    margin-top: 60rem;
+    margin-top: 50rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
-    // background: linear-gradient(to top, #ffb800 80%, #000);
-    background-color: #ffb800;
+    background-color: #faf8ee;
     filter: brightness(0.8);
+    border-radius: 1rem 1rem 0 0;
     position: absolute;
     left: 0;
   }
@@ -1419,7 +1434,7 @@ code {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: auto;
     margin-top: 90rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -1436,9 +1451,9 @@ code {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: auto;
     margin-top: 90rem;
-    padding-top: 5rem;
+    padding-top: 15rem;
     padding-bottom: 5rem;
     // background: linear-gradient(to top, #ffb800 80%, #000);
     background-color: #ffb800;
@@ -1451,7 +1466,7 @@ code {
 .footer-heading {
   font-family: 'Monoton', cursive;
   text-align: left;
-  color: #fff;
+  color: #000;
   @media screen and (max-width: 767px) {
     font-size: 4rem;
   }
@@ -1459,10 +1474,27 @@ code {
     font-size: 5rem;
   }
   @media screen and (min-width: 1025px) and (max-width: 1366px) {
-    font-size: 6rem;
+    font-size: 5rem;
   }
   @media screen and (min-width: 1367px) {
-    font-size: 7rem;
+    font-size: 5rem;
+  }
+}
+
+.footer-explain {
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  @media screen and (max-width: 767px) {
+    font-size: 1rem;
+    width: 70vw;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    font-size: 1.5rem;
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1366px) {
+    font-size: 1.5rem;
+  }
+  @media screen and (min-width: 1367px) {
+    font-size: 2rem;
   }
 }
 
@@ -1472,29 +1504,48 @@ code {
   text-align: left;
   margin-left: 1rem;
   @media screen and (max-width: 767px) {
-    font-size: 2rem;
-    color: #fff;
+    font-size: 1.5rem;
+    color: #000;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
-    font-size: 3rem;
+    font-size: 1.8rem;
+    margin-top: 1rem;
   }
   @media screen and (min-width: 1025px) and (max-width: 1366px) {
-    font-size: 3rem;
+    font-size: 2rem;
+    margin-top: 1rem;
   }
   @media screen and (min-width: 1367px) {
-    font-size: 3rem;
+    font-size: 2rem;
+    margin-top: 1rem;
   }
 }
 
 .footer-mail {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .footer-auth {
-  margin-top: 1rem;
-  font-size: 1.5rem;
+  @media screen and (max-width: 767px) {
+    font-size: 1rem;
+    margin-top: 5rem;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    font-size: 1.5rem;
+    margin-top: 5rem;
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1366px) {
+    font-size: 2rem;
+    margin-top: 5rem;
+  }
+  @media screen and (min-width: 1367px) {
+    font-size: 2rem;
+    margin-top: 5rem;
+  }
 }
 
 // showdataスタイル
@@ -1557,9 +1608,9 @@ code {
 
 .data-number {
   font-family: 'Train One', cursive;
-  color: #fff;
+  color: #ffb800;
   @media screen and (max-width: 767px) {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     font-size: 3rem;
@@ -1894,5 +1945,54 @@ code {
   @media screen and (min-width: 1367px) {
     margin-top: 1rem;
     font-size: 2rem;
+  }
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.usage-heading-nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.envelope {
+  @media screen and (max-width: 767px) {
+    width: 3rem;
+    height: 3rem;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    width: 4rem;
+    height: 4rem;
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1366px) {
+    width: 3rem;
+    height: 3rem;
+  }
+  @media screen and (min-width: 1367px) {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.instagram {
+  @media screen and (max-width: 767px) {
+    width: 3rem;
+    height: 3rem;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    width: 4rem;
+    height: 4rem;
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1366px) {
+    width: 3rem;
+    height: 3rem;
+  }
+  @media screen and (min-width: 1367px) {
+    width: 3rem;
+    height: 3rem;
   }
 }

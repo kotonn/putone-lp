@@ -41,7 +41,10 @@ const UsageFirst = ({ gradient }) => {
             />
           </div>
           <div className="usage-text-container">
-            <h2 className="usage-heading mb-5">1. Spotifyと連携する</h2>
+            <div className="usage-heading-nav">
+              <h2 className="usage-heading mb-5">1. </h2>
+              <h2 className="usage-heading mb-5">Spotifyと連携する</h2>
+            </div>
             <p className="usage-text lead">
               SpotifyAPIを通じて、様々な音楽を共有することができるようになります。
             </p>
@@ -50,7 +53,10 @@ const UsageFirst = ({ gradient }) => {
       ) : (
         <div className="usage-container" id="usagefirst">
           <div className="usage-text-container">
-            <h2 className="usage-heading mb-5">1. Spotifyと連携する</h2>
+            <div className="usage-heading-nav">
+              <h2 className="usage-heading mb-5">1. </h2>
+              <h2 className="usage-heading mb-5">Spotifyと連携する</h2>
+            </div>
             <p className="usage-text lead">
               SpotifyAPIを通じて、様々な音楽を共有することができるようになります。
             </p>

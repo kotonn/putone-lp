@@ -38,9 +38,12 @@ const UsageSecond = ({ gradient }) => {
             />
           </div>
           <div className="usage-second-text-container">
-            <h2 className="usage-second-heading mb-5">
-              2. ストーリー機能で、 好きな音楽を存分に共有しよう
-            </h2>
+            <div className="usage-heading-nav">
+              <h2 className="usage-heading mb-5">2. </h2>
+              <h2 className="usage-heading mb-5">
+                ストーリー機能で、 好きな音楽を存分に共有しよう
+              </h2>
+            </div>
             <p className="usage-second-text lead">
               自分の『好き』を思うがままに共有しましょう。
             </p>
@@ -49,9 +52,13 @@ const UsageSecond = ({ gradient }) => {
       ) : (
         <div className="usage-second-container" id="usagesecond">
           <div className="usage-second-text-container">
-            <h2 className="usage-second-heading mb-5">
-              2. ストーリー機能で、 好きな音楽を存分に共有しよう
-            </h2>
+            <div className="usage-heading-nav">
+              <h2 className="usage-heading mb-5">2. </h2>
+              <h2 className="usage-heading mb-5">
+                ストーリー機能で、 <br />
+                好きな音楽を存分に共有しよう
+              </h2>
+            </div>
             <p className="usage-second-text lead">
               自分の『好き』を思うがままに共有しましょう。
             </p>

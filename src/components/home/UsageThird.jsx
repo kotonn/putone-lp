@@ -50,10 +50,13 @@ const UsageThird = ({ gradient }) => {
       ) : (
         <div className="usage-third-container" id="usagethird">
           <div className="usage-third-text-container">
-            <h2 className="usage-third-heading mb-5">
-              3. フォロー機能 <br />
-              コミュニティ参加機能
-            </h2>
+            <div className="usage-heading-nav">
+              <h2 className="usage-heading mb-5">3. </h2>
+              <h2 className="usage-heading mb-5">
+                フォロー機能 <br />
+                コミュニティ参加機能
+              </h2>
+            </div>
             <p className="usage-third-text lead">
               様々な音楽に触れ、 自分の音楽の幅を、感性を広げましょう。
             </p>

@@ -3,7 +3,7 @@ import { useScrollPosition } from '../hooks/useScrollPosition'
 import useResizeObserver from '../hooks/useResizeObserver'
 import { NavLink } from './home/migration'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import Sidebar from './Sidebar'
 import { useColorChange } from '../hooks/useColorChange'
 import { Link } from 'react-router-dom'
@@ -61,13 +61,22 @@ const Navigation = React.forwardRef((props, ref) => {
                 <span></span>
                 <span></span>
                 <div className="div-container">
-                  <FontAwesomeIcon icon={faBars} size="lg" />
+                  {!isOpen ? (
+                    <FontAwesomeIcon icon={faBars} size="lg" />
+                  ) : (
+                    <FontAwesomeIcon icon={faTimes} size="lg" />
+                  )}
                 </div>
               </div>
             </div>
             {isOpen && (
               <div className="fullscreen-menu">
                 <ul className="navbar-nav">
+                  <li className="nav-item lead">
+                    <NavLink href={process.env.PUBLIC_URL + '/#home'}>
+                      <span>ホーム</span>
+                    </NavLink>
+                  </li>
                   <li className="nav-item lead">
                     <NavLink href={process.env.PUBLIC_URL + '/#usagefirst'}>
                       <span>使い方</span>

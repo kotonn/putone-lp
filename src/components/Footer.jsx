@@ -6,13 +6,18 @@ const Footer = () => {
     <div className="footer-container">
       <div className="footer-text-container" id="sns">
         <h1 className="footer-heading mb-5">PuTone</h1>
+        <p className="footer-explain mb-5">
+          当アプリについてのご質問やご相談など
+          <br />
+          お気軽にお問い合わせください。
+        </p>
         <div className="footer-mail">
-          <i
-            className="fa fa-envelope"
-            aria-hidden="true"
-            style={{ fontSize: '3rem' }}
-          ></i>
+          <img src="envelope.png" className="envelope" alt="mail" />
           <p className="footer-text lead">info@putone.jp</p>
+        </div>
+        <div className="footer-mail">
+          <img src="instagram.png" className="instagram" alt="instagram" />
+          <p className="footer-text lead">@putone</p>
         </div>
         <p className="footer-auth">© 2023 PuTone All right reserved.</p>
       </div>

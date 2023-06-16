@@ -30,7 +30,7 @@ export const ShowData = ({ gradient }) => {
                 )}
               </CountUp>
             </h2>
-            <p className="data-theme">Users</p>
+            <p className="data-theme">ユーザー数</p>
           </div>
           <div className="data-text">
             <h2 className="data-number">
@@ -42,7 +42,7 @@ export const ShowData = ({ gradient }) => {
                 )}
               </CountUp>
             </h2>
-            <p className="data-theme">Subscribes</p>
+            <p className="data-theme">登録数</p>
           </div>
           <div className="data-text">
             <h2 className="data-number">
@@ -54,7 +54,7 @@ export const ShowData = ({ gradient }) => {
                 )}
               </CountUp>
             </h2>
-            <p className="data-theme">Downloads</p>
+            <p className="data-theme">ダウンロード数</p>
           </div>
         </div>
       </Jumbotron>
