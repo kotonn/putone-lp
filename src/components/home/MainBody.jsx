@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container'
-import Typist from 'react-typist-component'
 import { Jumbotron } from './migration'
 import PropTypes from 'prop-types'
 import Image from 'react-bootstrap/Image'
@@ -32,14 +31,33 @@ const MainBody = React.forwardRef(({ gradient, title, message }, ref) => {
             }}
             className="title bg-transparent bgstyle text-light vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
           >
-            <Image src="demo.jpeg" alt="music" className="music" />
+            <Image
+              src="demo.jpeg"
+              alt="music"
+              className="music"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="1000"
+            />
             <Container className="text-center text-container">
-              <h1 ref={ref} className="top-font-style">
+              <h1
+                ref={ref}
+                className="top-font-style"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="1000"
+              >
                 {title}
               </h1>
-              <Typist>
-                <div className="lead typist">{message}</div>
-              </Typist>
+
+              <div
+                className="lead typist"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="1000"
+              >
+                {message}
+              </div>
             </Container>
           </Jumbotron>
           <div>
@@ -60,19 +78,42 @@ const MainBody = React.forwardRef(({ gradient, title, message }, ref) => {
             }}
             className="title bg-transparent bgstyle text-light d-flex align-content-center align-items-center flex-wrap m-0"
           >
-            <Image src="demo.jpeg" alt="music" className="music" />
+            <Image
+              src="demo.jpeg"
+              alt="music"
+              className="music"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="1000"
+            />
             <Container className="text-center text-container">
-              <h1 ref={ref} className="top-font-style">
+              <h1
+                ref={ref}
+                className="top-font-style"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="1000"
+              >
                 {title}
               </h1>
-              <Typist>
-                <div className="lead typist">{message}</div>
-              </Typist>
+
+              <div
+                className="lead typist"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="1000"
+              >
+                {message}
+              </div>
+
               <Link
                 className="btn btn-set"
                 to="/subscription"
                 role="button"
                 aria-label="Get Started"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="1000"
               >
                 Get Started
               </Link>

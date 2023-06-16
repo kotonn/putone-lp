@@ -77,7 +77,12 @@ const Login = ({ gradient }) => {
           </div>
         </div>
         {isOpen && (
-          <div className="fullscreen-menu">
+          <div
+            className="fullscreen-menu"
+            data-aos="fade-up"
+            data-aos-duration="300"
+            data-aos-delay="100"
+          >
             <ul className="navbar-nav">
               <li className="nav-item lead">
                 <NavLink href={process.env.PUBLIC_URL + '/#home'}>
@@ -106,8 +111,21 @@ const Login = ({ gradient }) => {
       </div>
       <div className="signup-container">
         <div className="top-container">
-          <h1 className="main-typography">Login</h1>
-          <form onSubmit={handleSubmit(onSubmit)} className="form-container">
+          <h1
+            className="main-typography"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="1000"
+          >
+            Login
+          </h1>
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="form-container"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="1000"
+          >
             <div className="name-container">
               <label htmlFor="email" className="label-container">
                 Email
@@ -144,11 +162,19 @@ const Login = ({ gradient }) => {
               </button>
             </div>
           </form>
-          <p className="guide-typography">
+          <p
+            className="guide-typography"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="1000"
+          >
             アカウントをお持ちでない方は
             <button
               onClick={() => navigate('/subscription')}
               className="guide-to-login-button"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="1000"
             >
               こちら
             </button>
@@ -163,6 +189,9 @@ const Login = ({ gradient }) => {
             loop
             playsInline
             className="video"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="1000"
           />
         </div>
       </div>

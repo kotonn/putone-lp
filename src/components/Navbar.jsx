@@ -70,7 +70,12 @@ const Navigation = React.forwardRef((props, ref) => {
               </div>
             </div>
             {isOpen && (
-              <div className="fullscreen-menu">
+              <div
+                className="fullscreen-menu"
+                data-aos="fade-up"
+                data-aos-duration="300"
+                data-aos-delay="100"
+              >
                 <ul className="navbar-nav">
                   <li className="nav-item lead">
                     <NavLink href={process.env.PUBLIC_URL + '/#home'}>
@@ -101,7 +106,12 @@ const Navigation = React.forwardRef((props, ref) => {
         {!isMobile && (
           <>
             <Sidebar />
-            <div className="header-style">
+            <div
+              className="header-style"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="1000"
+            >
               <div className="navbar-brand lead">
                 <a href="" target="_blank" rel="noopener noreferrer">
                   <i

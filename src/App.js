@@ -6,6 +6,7 @@ import AboutMe from './components/home/AboutMe'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Aos from 'aos'
+import 'aos/dist/aos.css'
 import UsageFirst from './components/home/UsageFirst.jsx'
 import UsageSecond from './components/home/UsageSecond.jsx'
 import UsageThird from './components/home/UsageThird.jsx'
@@ -84,7 +85,7 @@ const App = () => {
       duration: 600,
       easing: 'ease-out-sine',
     })
-  })
+  }, [])
 
   return (
     <AuthProvider>
