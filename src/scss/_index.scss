@@ -1911,7 +1911,7 @@ code {
     height: auto;
     max-height: 35vh;
     object-fit: cover;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     border-radius: 2rem 2rem 0 0;
   }
@@ -1920,7 +1920,7 @@ code {
     height: auto;
     max-height: 40vh;
     object-fit: cover;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     border-radius: 2rem 2rem 0 0;
   }
