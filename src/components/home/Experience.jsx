@@ -5,6 +5,7 @@ import {
   Container,
   Row,
 } from "react-bootstrap";
+import PropTypes from 'prop-types';
 
 const Experience = ({ experiences }) => {
   return (
@@ -25,6 +26,13 @@ const Experience = ({ experiences }) => {
       </Container>
     </section>
   );
+}
+
+Experience.propTypes = {
+  experiences: PropTypes.shape({
+    heading: PropTypes.string.isRequired,
+    data: PropTypes.arrayOf(PropTypes.object).isRequired
+  })
 }
 
 export default Experience;

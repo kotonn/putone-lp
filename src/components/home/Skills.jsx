@@ -6,14 +6,15 @@ import Row from "react-bootstrap/Row";
 import { Jumbotron } from "./migration";
 import { Container } from "react-bootstrap";
 import { useScrollPosition } from "../../hooks/useScrollPosition";
+import PropTypes from 'prop-types';
 
-const Skills = React.forwardRef(({ heading, hardSkills, softSkills }, ref) => {
+const Skills = React.forwardRef(({ heading, hardSkills, softSkills }) => {
   const skillsTabRef = React.useRef(null);
   const [isScrolled, setIsScrolled] = React.useState(false);
   //const navbarDimensions = useResizeObserver(navbarMenuRef);
 
   useScrollPosition(
-    ({ prevPos, currPos }) => {
+    ({ currPos }) => {
       if (!isScrolled && currPos.y - 400 < 0) setIsScrolled(true);
     },
     [],
@@ -54,5 +55,13 @@ const Skills = React.forwardRef(({ heading, hardSkills, softSkills }, ref) => {
     </Jumbotron>
   );
 });
+
+Skills.propTypes = {
+  heading: PropTypes.string,
+  hardSkills: PropTypes.arrayOf(PropTypes.object),
+  softSkills: PropTypes.arrayOf(PropTypes.object),
+};
+
+Skills.displayName = "Skills";
 
 export default Skills;

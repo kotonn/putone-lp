@@ -1,55 +1,76 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Typist from 'react-typist-component';
-import { Jumbotron } from "./migration";
+import React, { useEffect, useState } from 'react'
+import Container from 'react-bootstrap/Container'
+import Typist from 'react-typist-component'
+import { Jumbotron } from './migration'
+import PropTypes from 'prop-types'
+import Image from 'react-bootstrap/Image'
+import { Link } from 'react-router-dom'
 
-const MainBody = React.forwardRef(
-  ({ gradient, title, message, icons }, ref) => {
-    return (
+const MainBody = React.forwardRef(({ gradient, title, message }, ref) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768)
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+  return (
+    <>
       <Jumbotron
         fluid
         id="home"
         style={{
-          background: `linear-gradient(136deg,${gradient})`,
-          backgroundSize: "1200% 1200%",
+          background: `linear-gradient(to bottom,${gradient})`,
+          backgroundSize: 'cover',
         }}
-        className="title bg-transparent bgstyle text-light min-vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
+        className="title bg-transparent bgstyle text-light vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
       >
-        <div id="stars"></div>
-        <Container className="text-center">
-          <h1 ref={ref} className="display-1">
+        <Image src="demo.jpeg" alt="music" className="music" />
+        <Container className="text-center text-container">
+          <h1 ref={ref} className="top-font-style">
             {title}
           </h1>
           <Typist>
-            <div className="lead typist">
-              {message}
-            </div>
+            <div className="lead typist">{message}</div>
           </Typist>
-          <div className="p-5">
-            {icons.map((icon, index) => (
-              <a
-                key={`social-icon-${index}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={icon.url}
-                aria-label={`My ${icon.image.split("-")[1]}`}
-              >
-                <i className={`fab ${icon.image}  fa-3x socialicons`} />
-              </a>
-            ))}
-          </div>
-          <a
-            className="btn btn-outline-light btn-lg "
-            href="#aboutme"
-            role="button"
-            aria-label="Learn more about me"
-          >
-            More about me
-          </a>
+          {isMobile && (
+            <Link
+              className="btn btn-set"
+              to="/subscription"
+              role="button"
+              aria-label="Get Started"
+            >
+              Get Started
+            </Link>
+          )}
         </Container>
       </Jumbotron>
-    );
-  }
-);
+      <div>
+        <a href="#about" className="arrow-bellow">
+          <i className="fa fa-angle-double-down"></i>
+        </a>
+      </div>
+    </>
+  )
+})
 
-export default MainBody;
+MainBody.propTypes = {
+  gradient: Jumbotron.propTypes.style,
+  title: Jumbotron.propTypes.children,
+  message: Jumbotron.propTypes.children,
+  icons: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+}
+
+MainBody.displayName = 'MainBody'
+
+export default MainBody

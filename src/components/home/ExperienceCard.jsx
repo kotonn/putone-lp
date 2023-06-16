@@ -3,6 +3,7 @@ import React from 'react';
 import {
   Col,
 } from "react-bootstrap";
+import PropTypes from 'prop-types';
 
 const ExperienceCard = ({ data }) => {
   return (
@@ -18,6 +19,10 @@ const ExperienceCard = ({ data }) => {
       </div>
     </Col>
   );
+}
+
+ExperienceCard.propTypes = {
+  data: PropTypes.object.isRequired
 }
 
 export default ExperienceCard;

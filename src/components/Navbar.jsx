@@ -1,90 +1,147 @@
-import React, { useState } from "react";
-import { useScrollPosition } from "../hooks/useScrollPosition";
-import useResizeObserver from "../hooks/useResizeObserver";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
-import { NavLink } from "./home/migration";
+import React, { useState, useEffect } from 'react'
+import { useScrollPosition } from '../hooks/useScrollPosition'
+import useResizeObserver from '../hooks/useResizeObserver'
+import { NavLink } from './home/migration'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+import Sidebar from './Sidebar'
+import { useColorChange } from '../hooks/useColorChange'
+import { Link } from 'react-router-dom'
 
 const Navigation = React.forwardRef((props, ref) => {
-  // const { showBlog, FirstName } = config;
-  const [isTop, setIsTop] = useState(true);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const navbarMenuRef = React.useRef();
-  const navbarDimensions = useResizeObserver(navbarMenuRef);
-  const navBottom = navbarDimensions ? navbarDimensions.bottom : 0;
+  const [isTop, setIsTop] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
+  const [scrollPosition, setScrollPosition] = useState(0)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+  const navbarMenuRef = React.useRef()
+  const navbarDimensions = useResizeObserver(navbarMenuRef)
+  const navBottom = navbarDimensions ? navbarDimensions.bottom : 0
+  const color = useColorChange()
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen)
+  }
+
   useScrollPosition(
-    ({ prevPos, currPos }) => {
-      if (!navbarDimensions) return;
+    ({ currPos }) => {
+      if (!navbarDimensions || !ref.current) return
       currPos.y + ref.current.offsetTop - navbarDimensions.bottom > 5
         ? setIsTop(true)
-        : setIsTop(false);
-      setScrollPosition(currPos.y);
+        : setIsTop(false)
+      setScrollPosition(currPos.y)
     },
     [navBottom]
-  );
+  )
 
-  React.useEffect(() => {
-    if (!navbarDimensions) return;
+  useEffect(() => {
+    if (!navbarDimensions || !ref.current) return
     navBottom - scrollPosition >= ref.current.offsetTop
       ? setIsTop(false)
-      : setIsTop(true);
-  }, [navBottom, navbarDimensions, ref, scrollPosition]);
+      : setIsTop(true)
+  }, [navBottom, navbarDimensions, ref, scrollPosition])
+
+  useEffect(() => {
+    if (navbarDimensions) {
+      setIsMobile(navbarDimensions.width <= 768)
+    }
+  }, [navbarDimensions])
 
   return (
-    <Navbar
-      ref={navbarMenuRef}
-      className={`px-3 fixed-top  ${!isTop ? "navbar-white" : "navbar-transparent"
+    <>
+      <nav
+        ref={navbarMenuRef}
+        className={`fixed-nav  ${
+          !isTop ? 'navbar-transparent ' : 'navbar-transparent '
         }`}
-      expand="lg"
-    >
-      <Navbar.Brand className="navbar-brand" href={process.env.PUBLIC_URL + "/#home"}>
-        {`<${mainBody.firstName} />`}
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="navbar-nav mr-auto">
-          {/* {
-            <NavLink className="nav-item lead">
-              <Link to={process.env.PUBLIC_URL + "/blog"}>Blog</Link>
-            </NavLink>
-          } */}
-          {repos.show && (
+      >
+        {isMobile && (
+          <div className="toggler" onClick={toggleMenu}>
+            <div className="humberger-menu">
+              <div className="blob-effect">
+                <span></span>
+                <span></span>
+                <div className="div-container">
+                  <FontAwesomeIcon icon={faBars} size="lg" />
+                </div>
+              </div>
+            </div>
+            {isOpen && (
+              <div className="fullscreen-menu">
+                <ul className="navbar-nav">
+                  <li className="nav-item lead">
+                    <NavLink href={process.env.PUBLIC_URL + '/#usagefirst'}>
+                      <span>使い方</span>
+                    </NavLink>
+                  </li>
+                  <li className="nav-item lead">
+                    <NavLink href={process.env.PUBLIC_URL + '/#usagesecond'}>
+                      <span>お問い合わせ</span>
+                    </NavLink>
+                  </li>
 
-            <NavLink
-              href={process.env.PUBLIC_URL + "/#projects"}
-            >
-              Projects
-            </NavLink>
-          )}
-          <NavLink
-            className="nav-item lead"
-            href={about.resume}
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            Resume
-          </NavLink>
-          {about.show && (
-            <NavLink
-              className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/#aboutme"}
-            >
-              About
-            </NavLink>
-          )}
-          {skills.show && (
-            <NavLink
-              className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/#skills"}
-            >
-              Skills
-            </NavLink>
-          )}
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-  );
-});
+                  <li className="nav-item lead">
+                    <NavLink href={process.env.PUBLIC_URL + '/#sns'}>
+                      <span>SNS</span>
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+        )}
+        {!isMobile && (
+          <>
+            <Sidebar />
+            <div className="header-style">
+              <div className="navbar-brand lead">
+                <a href="" target="_blank" rel="noopener noreferrer">
+                  <i
+                    className={`fab fa-instagram socialicons`}
+                    style={{ color: color }}
+                  ></i>
+                </a>
+              </div>
+              <NavLink href={process.env.PUBLIC_URL + '/#home'}>
+                <span className="top-text-p" style={{ color: color }}>
+                  P
+                </span>
+              </NavLink>
+              <Link
+                className="btn btn-set"
+                to="/subscription"
+                role="button"
+                aria-label="Get Started"
+              >
+                Get Started
+              </Link>
+            </div>
+            <div>
+              <ul className="navbar-nav">
+                <li className="nav-item lead">
+                  <NavLink href={process.env.PUBLIC_URL + '/#usagefirst'}>
+                    <span style={{ color: color }}>1</span>
+                  </NavLink>
+                </li>
+                <li className="nav-item lead">
+                  <NavLink href={process.env.PUBLIC_URL + '/#usagesecond'}>
+                    <span style={{ color: color }}>2</span>
+                  </NavLink>
+                </li>
 
-export default Navigation;
+                <li className="nav-item lead">
+                  <NavLink href={process.env.PUBLIC_URL + '/#usagethird'}>
+                    <span style={{ color: color }}>3</span>
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+          </>
+        )}
+      </nav>
+    </>
+  )
+})
+
+Navigation.displayName = 'Navigation'
+
+export default Navigation

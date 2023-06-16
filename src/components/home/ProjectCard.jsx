@@ -3,6 +3,7 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Skeleton from "react-loading-skeleton";
 import axios from "axios";
+import PropTypes from 'prop-types';
 
 const ProjectCard = ({ value }) => {
   const {
@@ -37,6 +38,18 @@ const ProjectCard = ({ value }) => {
   );
 };
 
+ProjectCard.propTypes = {
+  value: PropTypes.shape({
+    name: PropTypes.string,
+    description: PropTypes.string,
+    svn_url: PropTypes.string,
+    stargazers_count: PropTypes.number,
+    languages_url: PropTypes.string,
+    pushed_at: PropTypes.string
+  }).isRequired
+}
+  
+
 const CardButtons = ({ svn_url }) => {
   return (
     <div className="d-grid gap-2 d-md-block">
@@ -52,6 +65,10 @@ const CardButtons = ({ svn_url }) => {
     </div>
   );
 };
+
+CardButtons.propTypes = {
+  svn_url: PropTypes.string.isRequired
+}
 
 const Language = ({ languages_url, repo_url }) => {
   const [data, setData] = useState([]);
@@ -100,6 +117,11 @@ const Language = ({ languages_url, repo_url }) => {
   );
 };
 
+Language.propTypes = {
+  languages_url: PropTypes.string.isRequired,
+  repo_url: PropTypes.string.isRequired
+}
+
 const CardFooter = ({ star_count, repo_url, pushed_at }) => {
   const [updated_at, setUpdated_at] = useState("0 mints");
 
@@ -140,5 +162,11 @@ const CardFooter = ({ star_count, repo_url, pushed_at }) => {
     </p>
   );
 };
+
+CardFooter.propTypes = {
+  star_count: PropTypes.number.isRequired,
+  repo_url: PropTypes.string.isRequired,
+  pushed_at: PropTypes.string.isRequired
+}
 
 export default ProjectCard;

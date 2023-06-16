@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { Jumbotron } from "./migration";
+import PropTypes from "prop-types";
 
 const Leadership = ({ heading, message, img, imageSize }) => {
   return (
@@ -40,6 +41,13 @@ const Leadership = ({ heading, message, img, imageSize }) => {
       </div>
     </Jumbotron>
   );
+};
+
+Leadership.propTypes = {
+  heading: PropTypes.string,
+  message: PropTypes.string,
+  img: PropTypes.array,
+  imageSize: PropTypes.object,
 };
 
 export default Leadership;

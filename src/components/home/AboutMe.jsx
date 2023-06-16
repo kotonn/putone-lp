@@ -1,73 +1,97 @@
-import React from "react";
+import React, { useState, useEffect } from 'react'
+import { Jumbotron } from './migration'
+import PropTypes from 'prop-types'
 
-import axios from "axios";
-import { Jumbotron } from "./migration";
+const AboutMe = ({ gradient }) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
 
-const pictureLinkRegex = new RegExp(
-  /[(http(s)?):(www.)?a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/
-);
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768)
+  }
 
-const AboutMe = ({ heading, message, link, imgSize, resume }) => {
-  const [profilePicUrl, setProfilePicUrl] = React.useState("");
-  const [showPic, setShowPic] = React.useState(Boolean(link));
-  // https://stackoverflow.com/questions/55840294/how-to-fix-missing-dependency-warning-when-using-useeffect-react-hook
-  React.useEffect(() => {
-    const handleRequest = async () => {
-      const instaLink = "https://www.instagram.com/";
-      const instaQuery = "/?__a=1";
-      try {
-        const response = await axios.get(instaLink + link + instaQuery);
-        setProfilePicUrl(response.data.graphql.user.profile_pic_url_hd);
-      } catch (error) {
-        setShowPic(false);
-        console.error(error.message);
-      }
-    };
-
-    if (link && !pictureLinkRegex.test(link)) {
-      handleRequest();
-    } else {
-      setProfilePicUrl(link);
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
     }
-  }, [link]);
-
-
+  }, [])
 
   return (
-    <Jumbotron id="aboutme" className="m-0">
-      <div className="container row">
-        <div className="col-5 d-none d-lg-block align-self-center">
-          {showPic && (
-            <img
-              className="border border-secondary rounded-circle"
-              src={profilePicUrl}
-              alt="profilepicture"
-              width={imgSize}
-              height={imgSize}
-            />
-          )}
-        </div>
-        <div className={`col-lg-${showPic ? "7" : "12"}`}>
-          <h2 className="display-4 mb-5 text-center">{heading}</h2>
-          <p className="lead text-center">{message}</p>
-          {resume && (
-            <p className="lead text-center">
-              <a
-                className="btn btn-outline-dark btn-lg"
-                href={resume}
-                target="_blank"
-                rel="noreferrer noopener"
-                role="button"
-                aria-label="Resume/CV"
-              >
-                Resume
-              </a>
+    <Jumbotron
+      fluid
+      style={{
+        background: `linear-gradient(${gradient})`,
+        backgroundSize: 'cover',
+        display: 'flex',
+        flexDirection: 'row',
+        minHeight: '100vh',
+        overflow: 'auto',
+      }}
+    >
+      {!isMobile ? (
+        <>
+          <div className="about-container" id="about">
+            <div className="about-text-container">
+              <h1 className="about-heading-top">『PuTone』って何？</h1>
+              <h2 className="about-heading mb-5">
+                次世代の音楽視聴エコシステムを創造するアプリです。
+              </h2>
+              <p className="about-text lead">
+                ウォークマン、音楽ストリーミングサービスで、イヤホン、ヘッドホンで1人だけで聞けるようになりました。
+                その一方で、人と音楽を分かち合う、好きを語り合う、そんな体験の場がなくなってしまいました。
+                <br />
+                それを取り戻すため、今こそ、一人から共同体視聴への転換期であると考え、このアプリを作りました。
+              </p>
+            </div>
+            <div className="video-container">
+              <video
+                src="promotion.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="about-video"
+              />
+            </div>
+          </div>
+        </>
+      ) : (
+        <div className="about-container" id="about">
+          <div className="about-text-container">
+            <h1 className="about-heading-top">『PuTone』って何？</h1>
+            <h2 className="about-heading mb-5">
+              次世代の音楽視聴エコシステムを創造するアプリです。
+            </h2>
+            <p className="about-text lead">
+              ウォークマン、音楽ストリーミングサービスで、イヤホン、ヘッドホンで1人だけで聞けるようになりました。
+              その一方で、人と音楽を分かち合う、好きを語り合う、そんな体験の場がなくなってしまいました。
+              <br />
+              それを取り戻すため、今こそ、一人から共同体視聴への転換期であると考え、このアプリを作りました。
             </p>
-          )}
+          </div>
+          <div className="video-container">
+            <video
+              src="promotion.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="about-video"
+            />
+          </div>
         </div>
-      </div>
+      )}
     </Jumbotron>
-  );
-};
+  )
+}
 
-export default AboutMe;
+AboutMe.propTypes = {
+  heading: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  imgSize: PropTypes.number.isRequired,
+  resume: PropTypes.string.isRequired,
+  gradient: PropTypes.string.isRequired,
+}
+
+export default AboutMe

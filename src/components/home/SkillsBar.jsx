@@ -1,5 +1,6 @@
 import React from "react";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import PropTypes from 'prop-types';
 
 function SkillsBar({ skill, value, isScrolled }) {
   return (
@@ -11,6 +12,12 @@ function SkillsBar({ skill, value, isScrolled }) {
       />
     </div>
   );
+}
+
+SkillsBar.propTypes = {
+  skill: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
+  isScrolled: PropTypes.bool.isRequired
 }
 
 export default SkillsBar;

@@ -1,6 +1,7 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import SkillsBar from "./SkillsBar";
+import PropTypes from 'prop-types'; 
 
 function SkillsSection({ skills, isScrolled }) {
   return (
@@ -16,6 +17,17 @@ function SkillsSection({ skills, isScrolled }) {
     </>
   );
 }
+
+SkillsSection.propTypes = {
+  skills: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired
+    })
+  ).isRequired,
+  isScrolled: PropTypes.bool.isRequired
+}
+
 
 function SkillsTab({ skills, isScrolled }) {
   return (
@@ -34,6 +46,16 @@ function SkillsTab({ skills, isScrolled }) {
       </Col>
     </>
   );
+}
+
+SkillsTab.propTypes = {
+  skills: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired
+    })
+  ).isRequired,
+  isScrolled: PropTypes.bool.isRequired
 }
 
 export default SkillsTab;

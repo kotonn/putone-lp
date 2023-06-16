@@ -1,102 +1,106 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {
-  navBar,
-  mainBody,
-  about,
-  repos,
-  leadership,
-  skills,
-  getInTouch,
-  experiences
-} from "./editable-stuff/config.js";
-import MainBody from "./components/home/MainBody";
-import AboutMe from "./components/home/AboutMe";
-import Project from "./components/home/Project";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import Skills from "./components/home/Skills";
-// import { Blog } from "./components/blog/Blog";
-// import BlogPost from "./components/blog/BlogPost";
-import GetInTouch from "./components/home/GetInTouch.jsx";
-import Leadership from "./components/home/Leadership.jsx";
-
-import Experience from "./components/home/Experience";
+import React, { useEffect } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { mainBody, about, repos } from './editable-stuff/config.js'
+import MainBody from './components/home/MainBody'
+import AboutMe from './components/home/AboutMe'
+import Footer from './components/Footer'
+import Navbar from './components/Navbar'
+import Aos from 'aos'
+import UsageFirst from './components/home/UsageFirst.jsx'
+import UsageSecond from './components/home/UsageSecond.jsx'
+import UsageThird from './components/home/UsageThird.jsx'
+import { ShowData } from './components/home/Showdata.jsx'
+import { AuthProvider } from './hooks/useAuthContext.jsx'
+import GetStarted from './components/home/GetStarted.jsx'
+import Login from './components/home/Login.jsx'
+import Created from './components/home/Created.jsx'
 
 const Home = React.forwardRef((props, ref) => {
   return (
     <>
       <MainBody
         gradient={mainBody.gradientColors}
-        title={`${mainBody.firstName} ${mainBody.middleName} ${mainBody.lastName}`}
+        title={`${mainBody.productName}`}
         message={mainBody.message}
         icons={mainBody.icons}
         ref={ref}
       />
-      {about.show && (
-        <AboutMe
-          heading={about.heading}
-          message={about.message}
-          link={about.imageLink}
-          imgSize={about.imageSize}
-          resume={about.resume}
-        />
-      )}
-      {
-        experiences.show && (
-          <Experience experiences={experiences}/>
-        )
-      }
-      {repos.show && (
-        <Project
-          heading={repos.heading}
-          username={repos.gitHubUsername}
-          length={repos.reposLength}
-          specfic={repos.specificRepos}
-        />
-      )}
-      {leadership.show && (
-        <Leadership
-          heading={leadership.heading}
-          message={leadership.message}
-          img={leadership.images}
-          imageSize={leadership.imageSize}
-        />
-      )}
-      {skills.show && (
-        <Skills
-          heading={skills.heading}
-          hardSkills={skills.hardSkills}
-          softSkills={skills.softSkills}
-        />
-      )}
-      
+      <ShowData gradient={repos.gradientColors} />
+      <AboutMe
+        heading={about.heading}
+        message={about.message}
+        link={about.imageLink}
+        imgSize={about.imageSize}
+        resume={about.resume}
+        gradient={about.gradientColors}
+      />
+      <UsageFirst gradient={repos.gradientColors} />
+      <UsageSecond gradient={repos.gradientColors} />
+      <UsageThird gradient={repos.gradientColors} />
+      <Footer gradient={repos.gradientColors} />
+      <Navbar ref={ref} />
     </>
-  );
-});
+  )
+})
+
+Home.displayName = 'Home'
+
+const Subscription = React.forwardRef((props, ref) => {
+  return (
+    <>
+      <GetStarted ref={ref} gradient="#ffb800, #ffb800" />
+    </>
+  )
+})
+
+Subscription.displayName = 'Subscription'
+
+const LoginUser = React.forwardRef((props, ref) => {
+  return (
+    <>
+      <Login ref={ref} gradient="#ffb800, #ffb800" />
+    </>
+  )
+})
+
+LoginUser.displayName = 'LoginUser'
+
+const CreatedUser = React.forwardRef((props, ref) => {
+  return (
+    <>
+      <Created ref={ref} gradient="#ffb800, #ffb800" />
+    </>
+  )
+})
+
+CreatedUser.displayName = 'CreatedUser'
 
 const App = () => {
-  const titleRef = React.useRef();
+  const titleRef = React.useRef()
+
+  useEffect(() => {
+    Aos.init({
+      once: true,
+      duration: 600,
+      easing: 'ease-out-sine',
+    })
+  })
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL + "/"}>
-      {navBar.show && <Navbar ref={titleRef} />}
-      <Routes>
-        <Route path="/" exact element={<Home ref={titleRef} />} />
-      </Routes>
-      {/* {false && <Route path="/blog" exact component={Blog} />}
-      {false && <Route path="/blog/:id" component={BlogPost} />} */}
-      <Footer>
-        {getInTouch.show && (
-          <GetInTouch
-            heading={getInTouch.heading}
-            message={getInTouch.message}
-            email={getInTouch.email}
+    <AuthProvider>
+      <BrowserRouter basename={process.env.PUBLIC_URL + '/'}>
+        <Routes>
+          <Route path="/" exact element={<Home ref={titleRef} />} />
+          <Route
+            path="/subscription"
+            element={<Subscription ref={titleRef} />}
           />
-        )}
-      </Footer>
-    </BrowserRouter>
-  );
-};
+          <Route path="/login" element={<LoginUser ref={titleRef} />} />
+          <Route path="/created" element={<CreatedUser ref={titleRef} />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
+  )
+}
 
-export default App;
+export default App

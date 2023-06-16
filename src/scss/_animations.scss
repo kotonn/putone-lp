@@ -8,51 +8,27 @@
 }
 
 @-webkit-keyframes BackgroundAnimation {
-  0% {
-    background-position: 0% 7%;
-  }
-  50% {
-    background-position: 100% 94%;
-  }
-  100% {
-    background-position: 0% 7%;
-  }
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 @-moz-keyframes BackgroundAnimation {
-  0% {
-    background-position: 0% 7%;
-  }
-  50% {
-    background-position: 100% 94%;
-  }
-  100% {
-    background-position: 0% 7%;
-  }
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 @-o-keyframes BackgroundAnimation {
-  0% {
-    background-position: 0% 7%;
-  }
-  50% {
-    background-position: 100% 94%;
-  }
-  100% {
-    background-position: 0% 7%;
-  }
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 @keyframes BackgroundAnimation {
-  0% {
-    background-position: 0% 7%;
-  }
-  50% {
-    background-position: 100% 94%;
-  }
-  100% {
-    background-position: 0% 7%;
-  }
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 @keyframes progress {
