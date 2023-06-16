@@ -16,7 +16,7 @@ const Footer = () => {
           <p className="footer-text lead">info@putone.jp</p>
         </div>
         <div className="footer-mail">
-          <img src="instagram.png" className="instagram" alt="instagram" />
+          <img src="Instagram.png" className="instagram" alt="insta" />
           <p className="footer-text lead">@putone</p>
         </div>
         <p className="footer-auth">© 2023 PuTone All right reserved.</p>
