@@ -21,40 +21,70 @@ const MainBody = React.forwardRef(({ gradient, title, message }, ref) => {
   }, [])
   return (
     <>
-      <Jumbotron
-        fluid
-        id="home"
-        style={{
-          background: `linear-gradient(to bottom,${gradient})`,
-          backgroundSize: 'cover',
-        }}
-        className="title bg-transparent bgstyle text-light vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
-      >
-        <Image src="demo.jpeg" alt="music" className="music" />
-        <Container className="text-center text-container">
-          <h1 ref={ref} className="top-font-style">
-            {title}
-          </h1>
-          <Typist>
-            <div className="lead typist">{message}</div>
-          </Typist>
-          {isMobile && (
-            <Link
-              className="btn btn-set"
-              to="/subscription"
-              role="button"
-              aria-label="Get Started"
-            >
-              Get Started
-            </Link>
-          )}
-        </Container>
-      </Jumbotron>
-      <div>
-        <a href="#about" className="arrow-bellow">
-          <i className="fa fa-angle-double-down"></i>
-        </a>
-      </div>
+      {!isMobile && (
+        <>
+          <Jumbotron
+            fluid
+            id="home"
+            style={{
+              background: `linear-gradient(to bottom,${gradient})`,
+              backgroundSize: 'cover',
+            }}
+            className="title bg-transparent bgstyle text-light vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
+          >
+            <Image src="demo.jpeg" alt="music" className="music" />
+            <Container className="text-center text-container">
+              <h1 ref={ref} className="top-font-style">
+                {title}
+              </h1>
+              <Typist>
+                <div className="lead typist">{message}</div>
+              </Typist>
+            </Container>
+          </Jumbotron>
+          <div>
+            <a href="#about" className="arrow-bellow">
+              <i className="fa fa-angle-double-down"></i>
+            </a>
+          </div>
+        </>
+      )}
+      {isMobile && (
+        <>
+          <Jumbotron
+            fluid
+            id="home"
+            style={{
+              background: `linear-gradient(to bottom, #000, #000)`,
+              backgroundSize: 'cover',
+            }}
+            className="title bg-transparent bgstyle text-light vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
+          >
+            <Image src="demo.jpeg" alt="music" className="music" />
+            <Container className="text-center text-container">
+              <h1 ref={ref} className="top-font-style">
+                {title}
+              </h1>
+              <Typist>
+                <div className="lead typist">{message}</div>
+              </Typist>
+              <Link
+                className="btn btn-set"
+                to="/subscription"
+                role="button"
+                aria-label="Get Started"
+              >
+                Get Started
+              </Link>
+            </Container>
+          </Jumbotron>
+          <div>
+            <a href="#about" className="arrow-bellow">
+              <i className="fa fa-angle-double-down"></i>
+            </a>
+          </div>
+        </>
+      )}
     </>
   )
 })
