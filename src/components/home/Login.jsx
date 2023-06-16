@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { auth } from '../../utils/firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { Jumbotron } from './migration'
 import { NavLink } from './migration'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 
 const Login = ({ gradient }) => {
   const navigate = useNavigate()
@@ -14,6 +16,12 @@ const Login = ({ gradient }) => {
     formState: { errors },
     setError,
   } = useForm()
+
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen)
+  }
 
   const onSubmit = (data) => {
     signInWithEmailAndPassword(auth, data.email, data.password)
@@ -54,9 +62,48 @@ const Login = ({ gradient }) => {
       }}
       className="title bg-transparent bgstyle text-light vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
     >
-      <NavLink href={process.env.PUBLIC_URL + '/#home'}>
-        <span className="top-text-p">P</span>
-      </NavLink>
+      <div className="toggler" onClick={toggleMenu}>
+        <div className="humberger-menu">
+          <div className="blob-effect-getstarted">
+            <span></span>
+            <span></span>
+            <div className="div-container" style={{ color: '#000' }}>
+              {!isOpen ? (
+                <FontAwesomeIcon icon={faBars} size="lg" />
+              ) : (
+                <FontAwesomeIcon icon={faTimes} size="lg" />
+              )}
+            </div>
+          </div>
+        </div>
+        {isOpen && (
+          <div className="fullscreen-menu">
+            <ul className="navbar-nav">
+              <li className="nav-item lead">
+                <NavLink href={process.env.PUBLIC_URL + '/#home'}>
+                  <span>ホーム</span>
+                </NavLink>
+              </li>
+              <li className="nav-item lead">
+                <NavLink href={process.env.PUBLIC_URL + '/#usagefirst'}>
+                  <span>使い方</span>
+                </NavLink>
+              </li>
+              <li className="nav-item lead">
+                <NavLink href={process.env.PUBLIC_URL + '/#usagesecond'}>
+                  <span>お問い合わせ</span>
+                </NavLink>
+              </li>
+
+              <li className="nav-item lead">
+                <NavLink href={process.env.PUBLIC_URL + '/#sns'}>
+                  <span>SNS</span>
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+        )}
+      </div>
       <div className="signup-container">
         <div className="top-container">
           <h1 className="main-typography">Login</h1>

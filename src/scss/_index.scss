@@ -43,14 +43,6 @@ code {
 }
 
 .navbar-nav {
-  @media (min-width: 768px) {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-  }
   @media screen and (max-width: 767px) {
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -324,6 +316,59 @@ code {
   width: 100%;
   height: 100%;
   border: 1px solid #ffb800;
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  transition: 0.5s;
+  animation: rotate-blob 4s linear infinite;
+}
+
+@keyframes rotate-blob {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-blob2 {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.blob-effect-getstarted {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blob-effect-getstarted span:nth-child(1) {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  transition: 0.5s;
+  animation: rotate-blob 5s linear infinite;
+}
+
+.blob-effect-getstarted span:nth-child(2) {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
   border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
   transition: 0.5s;
   animation: rotate-blob 4s linear infinite;
@@ -742,7 +787,6 @@ code {
     margin-top: 3rem;
     border-radius: 0 0 1rem 1rem;
     width: 100vw;
-    height: 50vh;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     margin-top: 3rem;
@@ -1665,11 +1709,13 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-height: 100vh;
   @media screen and (max-width: 767px) {
+    position: fixed;
+    top: 15vh;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
-    margin-top: 5rem;
+    position: fixed;
+    top: 10vh;
   }
   @media screen and (min-width: 1025px) and (max-width: 1366px) {
     margin-left: 7rem;
@@ -1798,13 +1844,13 @@ code {
     padding: 1rem;
     font-size: 1rem;
     margin-top: 0.5rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     padding: 1rem;
     font-size: 1rem;
     margin-top: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
   }
   @media screen and (min-width: 1025px) and (max-width: 1366px) {
     padding: 1rem;
@@ -1860,29 +1906,40 @@ code {
 
 .video {
   @media screen and (max-width: 767px) {
-    width: 80%;
+    width: 100vw;
     height: auto;
+    max-height: 35vh;
     object-fit: cover;
-    border-radius: 1rem;
-    border: 2px solid #000;
+    position: fixed;
+    bottom: 0;
+    border-radius: 2rem 2rem 0 0;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
-    width: 80%;
+    width: 100vw;
     height: auto;
+    max-height: 40vh;
     object-fit: cover;
-    border-radius: 1rem;
-    border: 2px solid #000;
+    position: fixed;
+    bottom: 0;
+    border-radius: 2rem 2rem 0 0;
   }
   @media screen and (min-width: 1025px) and (max-width: 1366px) {
-    width: 70%;
-    height: auto;
+    width: 50vw;
+    height: 100vh;
     object-fit: cover;
-    border-radius: 1rem;
-    border: 2px solid #000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-radius: 2rem 0 0 2rem;
   }
   @media screen and (min-width: 1367px) {
-    border-radius: 3rem;
-    border: 3px solid #000;
+    width: 50vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-radius: 2rem 0 0 2rem;
   }
 }
 
