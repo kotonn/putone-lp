@@ -55,10 +55,10 @@ const MainBody = React.forwardRef(({ gradient, title, message }, ref) => {
             fluid
             id="home"
             style={{
-              background: '#000000',
+              background: '#000',
               backgroundSize: 'cover',
             }}
-            className="title bg-transparent bgstyle text-light vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
+            className="title bg-transparent bgstyle text-light d-flex align-content-center align-items-center flex-wrap m-0"
           >
             <Image src="demo.jpeg" alt="music" className="music" />
             <Container className="text-center text-container">
