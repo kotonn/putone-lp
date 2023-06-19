@@ -12,7 +12,7 @@ const Navigation = React.forwardRef((props, ref) => {
   const [isTop, setIsTop] = useState(true)
   const [isOpen, setIsOpen] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
   const navbarMenuRef = React.useRef()
   const navbarDimensions = useResizeObserver(navbarMenuRef)
   const navBottom = navbarDimensions ? navbarDimensions.bottom : 0
@@ -42,7 +42,7 @@ const Navigation = React.forwardRef((props, ref) => {
 
   useEffect(() => {
     if (navbarDimensions) {
-      setIsMobile(navbarDimensions.width <= 768)
+      setIsMobile(navbarDimensions.width < 768)
     }
   }, [navbarDimensions])
 

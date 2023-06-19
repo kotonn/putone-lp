@@ -30,9 +30,6 @@ const UsageFirst = ({ gradient }) => {
     >
       {!isMobile ? (
         <>
-          {/* <div className="usage-heading-nav">
-            <h1>どんな使い方ができるの？</h1>
-          </div> */}
           <div className="usage-container" id="usagefirst">
             <img
               src="connectSpotify.png"
