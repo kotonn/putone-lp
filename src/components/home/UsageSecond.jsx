@@ -17,19 +17,19 @@ const UsageSecond = ({ gradient }) => {
   }, [])
 
   return (
-    <Jumbotron
-      fluid
-      style={{
-        background: `linear-gradient(${gradient})`,
-        backgroundSize: 'cover',
-        display: 'flex',
-        flexDirection: 'row',
-        minHeight: '100vh',
-        overflow: 'auto',
-      }}
-    >
+    <>
       {!isMobile ? (
-        <>
+        <Jumbotron
+          fluid
+          style={{
+            background: `linear-gradient(${gradient})`,
+            backgroundSize: 'cover',
+            display: 'flex',
+            flexDirection: 'row',
+            minHeight: '100vh',
+            overflow: 'auto',
+          }}
+        >
           <div className="usage-second-container" id="usagesecond">
             <img
               src="storyScreen.png"
@@ -48,29 +48,41 @@ const UsageSecond = ({ gradient }) => {
               自分の『好き』を思うがままに共有しましょう。
             </p>
           </div>
-        </>
+        </Jumbotron>
       ) : (
-        <div className="usage-second-container" id="usagesecond">
-          <div className="usage-second-text-container">
-            <div className="usage-heading-nav">
-              <h2 className="usage-heading mb-5">2. </h2>
-              <h2 className="usage-heading mb-5">
-                ストーリー機能で、 <br />
-                好きな音楽を存分に共有しよう
-              </h2>
+        <Jumbotron
+          fluid
+          style={{
+            background: `linear-gradient(${gradient})`,
+            backgroundSize: 'cover',
+            display: 'flex',
+            flexDirection: 'row',
+            minHeight: '150vh',
+            overflow: 'auto',
+          }}
+        >
+          <div className="usage-second-container" id="usagesecond">
+            <div className="usage-second-text-container">
+              <div className="usage-heading-nav">
+                <h2 className="usage-heading mb-5">2. </h2>
+                <h2 className="usage-heading mb-5">
+                  ストーリー機能で、 <br />
+                  好きな音楽を存分に共有しよう
+                </h2>
+              </div>
+              <p className="usage-second-text lead">
+                自分の『好き』を思うがままに共有しましょう。
+              </p>
             </div>
-            <p className="usage-second-text lead">
-              自分の『好き』を思うがままに共有しましょう。
-            </p>
+            <img
+              src="storyScreen.png"
+              alt="storypicture"
+              className="usage-second-pic"
+            />
           </div>
-          <img
-            src="storyScreen.png"
-            alt="storypicture"
-            className="usage-second-pic"
-          />
-        </div>
+        </Jumbotron>
       )}
-    </Jumbotron>
+    </>
   )
 }
 

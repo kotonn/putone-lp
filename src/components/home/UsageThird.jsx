@@ -17,19 +17,19 @@ const UsageThird = ({ gradient }) => {
   }, [])
 
   return (
-    <Jumbotron
-      fluid
-      style={{
-        background: `linear-gradient(${gradient})`,
-        backgroundSize: 'cover',
-        display: 'flex',
-        flexDirection: 'row',
-        minHeight: '100vh',
-        overflow: 'auto',
-      }}
-    >
+    <>
       {!isMobile ? (
-        <>
+        <Jumbotron
+          fluid
+          style={{
+            background: `linear-gradient(${gradient})`,
+            backgroundSize: 'cover',
+            display: 'flex',
+            flexDirection: 'row',
+            minHeight: '100vh',
+            overflow: 'auto',
+          }}
+        >
           <div className="usage-third-container" id="usagethird">
             <img
               src="friendScreen.png"
@@ -46,29 +46,41 @@ const UsageThird = ({ gradient }) => {
               様々な音楽に触れ、 自分の音楽の幅を、感性を広げましょう。
             </p>
           </div>
-        </>
+        </Jumbotron>
       ) : (
-        <div className="usage-third-container" id="usagethird">
-          <div className="usage-third-text-container">
-            <div className="usage-heading-nav">
-              <h2 className="usage-heading mb-5">3. </h2>
-              <h2 className="usage-heading mb-5">
-                フォロー機能 <br />
-                コミュニティ参加機能
-              </h2>
+        <Jumbotron
+          fluid
+          style={{
+            background: `linear-gradient(${gradient})`,
+            backgroundSize: 'cover',
+            display: 'flex',
+            flexDirection: 'row',
+            minHeight: '150vh',
+            overflow: 'auto',
+          }}
+        >
+          <div className="usage-third-container" id="usagethird">
+            <div className="usage-third-text-container">
+              <div className="usage-heading-nav">
+                <h2 className="usage-heading mb-5">3. </h2>
+                <h2 className="usage-heading mb-5">
+                  フォロー機能 <br />
+                  コミュニティ参加機能
+                </h2>
+              </div>
+              <p className="usage-third-text lead">
+                様々な音楽に触れ、 自分の音楽の幅を、感性を広げましょう。
+              </p>
             </div>
-            <p className="usage-third-text lead">
-              様々な音楽に触れ、 自分の音楽の幅を、感性を広げましょう。
-            </p>
+            <img
+              src="friendScreen.png"
+              alt="friendpicture"
+              className="usage-third-pic"
+            />
           </div>
-          <img
-            src="friendScreen.png"
-            alt="friendpicture"
-            className="usage-third-pic"
-          />
-        </div>
+        </Jumbotron>
       )}
-    </Jumbotron>
+    </>
   )
 }
 
