@@ -24,7 +24,7 @@ const AboutMe = ({ gradient }) => {
         backgroundSize: 'cover',
         display: 'flex',
         flexDirection: 'row',
-        minHeight: '100vh',
+        minHeight: '200vh',
         overflow: 'auto',
       }}
     >

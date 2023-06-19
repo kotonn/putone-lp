@@ -6,7 +6,7 @@ export const Jumbotron = (props) => {
   const bgStyle = props.style ?? { backgroundColor: '#000' }
   return (
     <div id={props.id} className={`${props.className}`} style={bgStyle}>
-      <div className="container py-5">{props.children}</div>
+      <div className="container">{props.children}</div>
     </div>
   )
 }

@@ -1,9 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Jumbotron } from './home/migration'
 
-const Footer = () => {
+const Footer = ({ gradient }) => {
   return (
-    <div className="footer-container">
+    <Jumbotron
+      fluid
+      style={{
+        background: `linear-gradient(${gradient})`,
+        backgroundSize: 'cover',
+        display: 'flex',
+        flexDirection: 'row',
+        minHeight: '100vh',
+        overflow: 'auto',
+      }}
+    >
       <div className="footer-text-container" id="sns">
         <h1 className="footer-heading mb-5">PuTone</h1>
         <p className="footer-explain mb-5">
@@ -21,7 +32,7 @@ const Footer = () => {
         </div>
         <p className="footer-auth">© 2023 PuTone All right reserved.</p>
       </div>
-    </div>
+    </Jumbotron>
   )
 }
 
