@@ -88,7 +88,7 @@ const Navigation = React.forwardRef((props, ref) => {
                     </NavLink>
                   </li>
                   <li className="nav-item lead">
-                    <NavLink href={process.env.PUBLIC_URL + '/#sns'}>
+                    <NavLink href={process.env.PUBLIC_URL + '/contact'}>
                       <span>お問い合わせ</span>
                     </NavLink>
                   </li>

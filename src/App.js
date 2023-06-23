@@ -16,6 +16,7 @@ import GetStarted from './components/home/GetStarted.jsx'
 import Login from './components/home/Login.jsx'
 import Created from './components/home/Created.jsx'
 import NavigateUsage from './components/home/NavigateUsage.jsx'
+import Contact from './components/home/Contact.jsx'
 
 const Home = React.forwardRef((props, ref) => {
   return (
@@ -45,7 +46,6 @@ const Home = React.forwardRef((props, ref) => {
     </>
   )
 })
-
 Home.displayName = 'Home'
 
 const Subscription = React.forwardRef((props, ref) => {
@@ -55,7 +55,6 @@ const Subscription = React.forwardRef((props, ref) => {
     </>
   )
 })
-
 Subscription.displayName = 'Subscription'
 
 const LoginUser = React.forwardRef((props, ref) => {
@@ -65,7 +64,6 @@ const LoginUser = React.forwardRef((props, ref) => {
     </>
   )
 })
-
 LoginUser.displayName = 'LoginUser'
 
 const CreatedUser = React.forwardRef((props, ref) => {
@@ -75,8 +73,16 @@ const CreatedUser = React.forwardRef((props, ref) => {
     </>
   )
 })
-
 CreatedUser.displayName = 'CreatedUser'
+
+const ContactForm = React.forwardRef((props, ref) => {
+  return (
+    <>
+      <Contact ref={ref} gradient="#ffb800, #ffb800" />
+    </>
+  );
+});
+ContactForm.displayName = 'ContactForm';
 
 const App = () => {
   const titleRef = React.useRef()
@@ -100,6 +106,7 @@ const App = () => {
           />
           <Route path="/login" element={<LoginUser ref={titleRef} />} />
           <Route path="/created" element={<CreatedUser ref={titleRef} />} />
+          <Route path="/contact" element={<ContactForm ref={titleRef} />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

@@ -15,9 +15,7 @@ const Created = ({ gradient }) => {
     >
       <div className="created-container">
         <p className="created-text">
-          登録が完了しました。アプリがリリースされた際には
-          <br />
-          メールをお送りさせて頂きます。
+          登録が完了しました。アプリがリリースされた際にはメールをお送りさせて頂きます。
         </p>
         <NavLink href={process.env.PUBLIC_URL + '/#home'}>
           <p className="created-return">ホームに戻る</p>

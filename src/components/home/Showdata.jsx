@@ -16,6 +16,7 @@ export const ShowData = ({ gradient }) => {
           display: 'flex',
           flexDirection: 'row',
           minHeight: '100vh',
+          maxHegiht: '100vh',
           overflow: 'auto',
         }}
       >

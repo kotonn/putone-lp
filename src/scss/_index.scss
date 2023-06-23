@@ -1460,6 +1460,9 @@ code {
     flex-direction: column;
     width: 100%;
     height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    margin-top: 5rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
     background-color: #faf8ee;
@@ -1476,6 +1479,8 @@ code {
     flex-direction: column;
     width: 100%;
     height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
     margin-top: 15rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -1491,7 +1496,9 @@ code {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: auto;
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
     padding-top: 5rem;
     padding-bottom: 5rem;
     margin-top: 15rem;
@@ -1507,10 +1514,10 @@ code {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: auto;
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
     margin-top: 15rem;
-    padding-top: 15rem;
-    padding-bottom: 5rem;
     background-color: #ffb800;
     filter: brightness(0.8);
     position: absolute;
@@ -1526,27 +1533,28 @@ code {
     font-size: 4rem;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
-    font-size: 5rem;
+    font-size: 6rem;
   }
   @media screen and (min-width: 1025px) and (max-width: 1366px) {
-    font-size: 5rem;
+    font-size: 6rem;
   }
   @media screen and (min-width: 1367px) {
-    font-size: 5rem;
+    font-size: 8rem;
   }
 }
 
 .footer-explain {
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  margin-top: 1rem;
   @media screen and (max-width: 767px) {
     font-size: 1rem;
     width: 70vw;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   @media screen and (min-width: 1025px) and (max-width: 1366px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   @media screen and (min-width: 1367px) {
     font-size: 1.5rem;
@@ -1567,7 +1575,7 @@ code {
     margin-top: 1rem;
   }
   @media screen and (min-width: 1025px) and (max-width: 1366px) {
-    font-size: 2rem;
+    font-size: 1.3rem;
     margin-top: 1rem;
   }
   @media screen and (min-width: 1367px) {
@@ -1600,6 +1608,52 @@ code {
   @media screen and (min-width: 1367px) {
     font-size: 1.2rem;
     margin-top: 5rem;
+  }
+}
+
+.footer-button {
+  margin-top: 1rem;
+  &:hover {
+    background-color: #fff;
+    border-color: #ffb800;
+    color: #000;
+  }
+  @media screen and (max-width: 767px) {
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-color: #000;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    font-family: 'Monoton', cursive;
+    color: white;
+    background-color: rgba(0, 0, 0, 1);
+    border-color: #ffb800;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-top: 0.8rem;
+    margin-right: 1rem;
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1366px) {
+    font-family: 'Monoton', cursive;
+    color: white;
+    background-color: rgba(0, 0, 0, 1);
+    border-color: #ffb800;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+  @media screen and (min-width: 1367px) {
+    font-family: 'Monoton', cursive;
+    color: white;
+    background-color: rgba(0, 0, 0, 1);
+    border-color: #ffb800;
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    margin-right: 0.7rem;
   }
 }
 
@@ -1638,7 +1692,7 @@ code {
     align-items: center;
     flex-direction: row;
     width: 100%;
-    height: 80vh;
+    height: 100vh;
   }
 }
 
@@ -1956,11 +2010,13 @@ code {
 }
 
 .created-container {
+  width: 80vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #000;
+  margin: 0 auto;
   @media screen and (max-width: 767px) {
     margin-top: 1rem;
   }
@@ -1984,10 +2040,10 @@ code {
     font-size: 1.5rem;
   }
   @media screen and (min-width: 1025px) and (max-width: 1366px) {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   @media screen and (min-width: 1367px) {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -2009,11 +2065,11 @@ code {
   }
   @media screen and (min-width: 1025px) and (max-width: 1366px) {
     margin-top: 1rem;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
   }
   @media screen and (min-width: 1367px) {
     margin-top: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -2063,5 +2119,172 @@ code {
   @media screen and (min-width: 1367px) {
     width: 3rem;
     height: 3rem;
+  }
+}
+
+// Contactスタイル
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-typography-form {
+  color: #000;
+  font-family: 'Monoton', cursive;
+  font-weight: 400;
+  @media screen and (max-width: 767px) {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1366px) {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  @media screen and (min-width: 1367px) {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.contact-form-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.contact-label {
+  color: #000;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  @media screen and (max-width: 767px) {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0.2rem;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1366px) {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  @media screen and (min-width: 1367px) {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.contact-input-container {
+  background-color: rgba(255, 255, 255, 0.7);
+  @media screen and (max-width: 767px) {
+    width: 18rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    width: 20rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid;
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1366px) {
+    width: 20rem;
+    height: 2rem;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid;
+  }
+  @media screen and (min-width: 1367px) {
+    width: 20rem;
+    height: 3rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid;
+  }
+}
+
+.contact-input-container-textarea {
+  background-color: rgba(255, 255, 255, 0.7);
+  @media screen and (max-width: 767px) {
+    width: 18rem;
+    height: 10rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    width: 20rem;
+    height: 10rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid;
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1366px) {
+    width: 20rem;
+    height: 10rem;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid;
+  }
+  @media screen and (min-width: 1367px) {
+    width: 20rem;
+    height: 10rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid;
+  }
+}
+
+.contact-button {
+  border: 1px solid;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.7);
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1366px) {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    margin-top: 3rem;
+  }
+  @media screen and (min-width: 1367px) {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    margin-top: 3rem;
   }
 }

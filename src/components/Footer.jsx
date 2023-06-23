@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import { Jumbotron } from './home/migration'
 
 const Footer = ({ gradient }) => {
@@ -22,14 +23,15 @@ const Footer = ({ gradient }) => {
           <br />
           お気軽にお問い合わせください。
         </p>
-        <div className="footer-mail">
-          <img src="envelope.png" className="envelope" alt="mail" />
-          <p className="footer-text lead">info@putone.jp</p>
-        </div>
-        <div className="footer-mail">
-          <img src="Instagram.png" className="instagram" alt="insta" />
-          <p className="footer-text lead">@putone</p>
-        </div>
+
+        <Link
+          className="btn footer-button"
+          to="/contact"
+          role="button"
+          aria-label="お問い合わせ"
+        >
+          お問い合わせ
+        </Link>
         <p className="footer-auth">© 2023 PuTone All right reserved.</p>
       </div>
     </Jumbotron>
