@@ -838,6 +838,8 @@ code {
     justify-content: center;
     width: 100%;
     height: auto;
+    min-height: 130vh;
+    max-height: 130vh;
     padding: 7rem 3rem;
     background-color: #ffb800;
     filter: brightness(0.8);
@@ -853,6 +855,8 @@ code {
     justify-content: center;
     width: 60%;
     height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
     padding: 7rem 5rem;
     background-color: #ffb800;
     border-radius: 1rem;
@@ -868,6 +872,8 @@ code {
     justify-content: center;
     width: 60%;
     height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
     padding: 7rem 5rem;
     background-color: #ffb800;
     border-radius: 1rem;
@@ -883,6 +889,8 @@ code {
     justify-content: center;
     width: 60%;
     height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
     padding: 7rem 5rem;
     background-color: #ffb800;
     border-radius: 1rem;
@@ -977,25 +985,29 @@ code {
 .usage-pic {
   @media screen and (max-width: 767px) {
     width: 250px;
+    max-width: 250px;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     margin-top: 1rem;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     width: 300px;
+    max-width: 300px;
     height: auto;
     object-fit: cover;
   }
 
   @media screen and (min-width: 1025px) and (max-width: 1366px) {
     width: 300px;
+    max-width: 300px;
     height: auto;
     object-fit: cover;
   }
 
   @media screen and (min-width: 1367px) {
     width: 400px;
+    max-width: 400px;
     height: auto;
     object-fit: cover;
   }
@@ -1006,7 +1018,7 @@ code {
   @media screen and (max-width: 767px) {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     width: 100%;
   }
@@ -1087,6 +1099,8 @@ code {
     justify-content: center;
     width: 100%;
     height: auto;
+    min-height: 130vh;
+    max-height: 130vh;
     padding: 7rem 3rem;
     background-color: #ffb800;
     filter: brightness(0.8);
@@ -1102,6 +1116,8 @@ code {
     justify-content: center;
     width: 60%;
     height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
     padding: 7rem 5rem;
     margin-top: 5rem;
     background-color: #ffb800;
@@ -1118,6 +1134,8 @@ code {
     justify-content: center;
     width: 60%;
     height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
     padding: 7rem 5rem;
     margin-top: 5rem;
     background-color: #ffb800;
@@ -1134,6 +1152,8 @@ code {
     justify-content: center;
     width: 60%;
     height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
     padding: 7rem 5rem;
     margin-top: 5rem;
     background-color: #ffb800;
@@ -1176,7 +1196,7 @@ code {
   @media screen and (max-width: 767px) {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     width: 100%;
   }
@@ -1259,6 +1279,8 @@ code {
     justify-content: center;
     width: 100%;
     height: auto;
+    min-height: 130vh;
+    max-height: 130vh;
     padding: 7rem 3rem;
     background-color: #ffb800;
     filter: brightness(0.8);
@@ -1274,6 +1296,8 @@ code {
     justify-content: center;
     width: 60%;
     height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
     padding: 7rem 5rem;
     margin-top: 10rem;
     background-color: #ffb800;
@@ -1290,6 +1314,8 @@ code {
     justify-content: center;
     width: 60%;
     height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
     padding: 7rem 5rem;
     margin-top: 10rem;
     background-color: #ffb800;
@@ -1306,6 +1332,8 @@ code {
     justify-content: center;
     width: 60%;
     height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
     padding: 7rem 5rem;
     margin-top: 10rem;
     background-color: #ffb800;
@@ -1348,7 +1376,7 @@ code {
   @media screen and (max-width: 767px) {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     width: 100%;
   }

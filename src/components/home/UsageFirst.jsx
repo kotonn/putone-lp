@@ -27,6 +27,7 @@ const UsageFirst = ({ gradient }) => {
             display: 'flex',
             flexDirection: 'row',
             minHeight: '100vh',
+            maxHeight: '100vh',
             overflow: 'auto',
           }}
         >
@@ -55,7 +56,8 @@ const UsageFirst = ({ gradient }) => {
             backgroundSize: 'cover',
             display: 'flex',
             flexDirection: 'row',
-            minHeight: '150vh',
+            minHeight: '130vh',
+            maxHeight: '130vh',
             overflow: 'auto',
           }}
         >

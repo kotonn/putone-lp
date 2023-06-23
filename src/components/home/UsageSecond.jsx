@@ -27,6 +27,7 @@ const UsageSecond = ({ gradient }) => {
             display: 'flex',
             flexDirection: 'row',
             minHeight: '100vh',
+            maxHeight: '100vh',
             overflow: 'auto',
           }}
         >
@@ -57,8 +58,10 @@ const UsageSecond = ({ gradient }) => {
             backgroundSize: 'cover',
             display: 'flex',
             flexDirection: 'row',
-            minHeight: '150vh',
+            minHeight: '130vh',
+            maxHeight: '130vh',
             overflow: 'auto',
+            marginTop: '5vh',
           }}
         >
           <div className="usage-second-container" id="usagesecond">
