@@ -30,7 +30,7 @@ const UsageFirst = ({ gradient }) => {
             overflow: 'auto',
           }}
         >
-          <div className="usage-container" id="usagefirst">
+          <div className="usage-container">
             <img
               src="connectSpotify.png"
               alt="spotifypicture"
@@ -59,10 +59,7 @@ const UsageFirst = ({ gradient }) => {
             overflow: 'auto',
           }}
         >
-          {/* <div className="usage-explain" id="usagefirst">
-            <p className="usage-explain-text"></p>
-          </div> */}
-          <div className="usage-container" id="usagefirst">
+          <div className="usage-container">
             <div className="usage-text-container">
               <div className="usage-heading-nav">
                 <h2 className="usage-heading mb-5">1. </h2>

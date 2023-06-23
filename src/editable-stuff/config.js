@@ -47,6 +47,7 @@ const repos = {
   reposLength: 1,
   specificRepos: [],
   gradientColors: 'to bottom, #000, #000',
+  message: 'どうやって使うの？',
 }
 
 // Leadership SECTION

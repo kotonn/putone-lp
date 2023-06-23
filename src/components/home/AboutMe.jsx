@@ -7,10 +7,14 @@ const AboutMe = ({ gradient }) => {
   const [isTablet, setIsTablet] = useState(
     window.innerWidth >= 768 && window.innerWidth <= 1024
   )
+  const [isLap, setIsLap] = useState(
+    window.innerWidth >= 1025 && window.innerWidth <= 1366
+  )
 
   const handleResize = () => {
     setIsMobile(window.innerWidth < 768)
     setIsTablet(window.innerWidth >= 768 && window.innerWidth <= 1024)
+    setIsLap(window.innerWidth >= 1025 && window.innerWidth <= 1366)
   }
 
   useEffect(() => {
@@ -30,7 +34,7 @@ const AboutMe = ({ gradient }) => {
             backgroundSize: 'cover',
             display: 'flex',
             flexDirection: 'row',
-            minHeight: isTablet ? '125vh' : '200vh',
+            minHeight: isTablet ? '110vh' : isLap ? '200vh' : '175vh',
             overflow: 'auto',
           }}
         >

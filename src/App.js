@@ -15,6 +15,7 @@ import { AuthProvider } from './hooks/useAuthContext.jsx'
 import GetStarted from './components/home/GetStarted.jsx'
 import Login from './components/home/Login.jsx'
 import Created from './components/home/Created.jsx'
+import NavigateUsage from './components/home/NavigateUsage.jsx'
 
 const Home = React.forwardRef((props, ref) => {
   return (
@@ -35,6 +36,7 @@ const Home = React.forwardRef((props, ref) => {
         resume={about.resume}
         gradient={about.gradientColors}
       />
+      <NavigateUsage gradient={repos.gradientColors} message={repos.message} />
       <UsageFirst gradient={repos.gradientColors} />
       <UsageSecond gradient={repos.gradientColors} />
       <UsageThird gradient={repos.gradientColors} />
