@@ -4,19 +4,14 @@ import useResizeObserver from '../hooks/useResizeObserver'
 import { NavLink } from './home/migration'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
-import Sidebar from './Sidebar'
-import { useColorChange } from '../hooks/useColorChange'
-import { Link } from 'react-router-dom'
 
 const Navigation = React.forwardRef((props, ref) => {
   const [isTop, setIsTop] = useState(true)
   const [isOpen, setIsOpen] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
   const navbarMenuRef = React.useRef()
   const navbarDimensions = useResizeObserver(navbarMenuRef)
   const navBottom = navbarDimensions ? navbarDimensions.bottom : 0
-  const color = useColorChange()
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -40,12 +35,6 @@ const Navigation = React.forwardRef((props, ref) => {
       : setIsTop(true)
   }, [navBottom, navbarDimensions, ref, scrollPosition])
 
-  useEffect(() => {
-    if (navbarDimensions) {
-      setIsMobile(navbarDimensions.width < 768)
-    }
-  }, [navbarDimensions])
-
   return (
     <>
       <nav
@@ -53,109 +42,57 @@ const Navigation = React.forwardRef((props, ref) => {
         className={`fixed-nav  ${
           !isTop ? 'navbar-transparent ' : 'navbar-transparent '
         }`}
+        data-aos="fade-up"
+        data-aos-duration="800"
+        data-aos-delay="800"
       >
-        {isMobile && (
-          <div className="toggler" onClick={toggleMenu}>
-            <div className="humberger-menu">
-              <div className="blob-effect">
-                <span></span>
-                <span></span>
-                <div className="div-container">
-                  {!isOpen ? (
-                    <FontAwesomeIcon icon={faBars} size="lg" />
-                  ) : (
-                    <FontAwesomeIcon icon={faTimes} size="lg" />
-                  )}
-                </div>
+        <div className="toggler" onClick={toggleMenu}>
+          <div className="humberger-menu">
+            <div className="blob-effect">
+              <span></span>
+              <span></span>
+              <div className="div-container">
+                {!isOpen ? (
+                  <FontAwesomeIcon icon={faBars} size="lg" />
+                ) : (
+                  <FontAwesomeIcon icon={faTimes} size="lg" />
+                )}
               </div>
             </div>
-            {isOpen && (
-              <div
-                className="fullscreen-menu"
-                data-aos="fade-up"
-                data-aos-duration="300"
-                data-aos-delay="100"
-              >
-                <ul className="navbar-nav">
-                  <li className="nav-item lead">
-                    <NavLink href={process.env.PUBLIC_URL + '/#home'}>
-                      <span>ホーム</span>
-                    </NavLink>
-                  </li>
-                  <li className="nav-item lead">
-                    <NavLink href={process.env.PUBLIC_URL + '/#usagefirst'}>
-                      <span>使い方</span>
-                    </NavLink>
-                  </li>
-                  <li className="nav-item lead">
-                    <NavLink href={process.env.PUBLIC_URL + '/contact'}>
-                      <span>お問い合わせ</span>
-                    </NavLink>
-                  </li>
-
-                  <li className="nav-item lead">
-                    <NavLink href={process.env.PUBLIC_URL + '/#sns'}>
-                      <span>SNS</span>
-                    </NavLink>
-                  </li>
-                </ul>
-              </div>
-            )}
           </div>
-        )}
-        {!isMobile && (
-          <>
-            <Sidebar />
+          {isOpen && (
             <div
-              className="header-style"
+              className="fullscreen-menu"
               data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay="1000"
+              data-aos-duration="300"
+              data-aos-delay="100"
             >
-              <div className="navbar-brand lead">
-                <a href="" target="_blank" rel="noopener noreferrer">
-                  <i
-                    className={`fab fa-instagram socialicons`}
-                    style={{ color: color }}
-                  ></i>
-                </a>
-              </div>
-              <NavLink href={process.env.PUBLIC_URL + '/#home'}>
-                <span className="top-text-p" style={{ color: color }}>
-                  P
-                </span>
-              </NavLink>
-              <Link
-                className="btn btn-set"
-                to="/subscription"
-                role="button"
-                aria-label="Get Started"
-              >
-                Get Started
-              </Link>
-            </div>
-            <div>
               <ul className="navbar-nav">
                 <li className="nav-item lead">
-                  <NavLink href={process.env.PUBLIC_URL + '/#usagefirst'}>
-                    <span style={{ color: color }}>1</span>
+                  <NavLink href={process.env.PUBLIC_URL + '/#home'}>
+                    <span>ホーム</span>
                   </NavLink>
                 </li>
                 <li className="nav-item lead">
-                  <NavLink href={process.env.PUBLIC_URL + '/#usagesecond'}>
-                    <span style={{ color: color }}>2</span>
+                  <NavLink href={process.env.PUBLIC_URL + '/#function'}>
+                    <span>機能</span>
+                  </NavLink>
+                </li>
+                <li className="nav-item lead">
+                  <NavLink href={process.env.PUBLIC_URL + '/#contact'}>
+                    <span>お問い合わせ</span>
                   </NavLink>
                 </li>
 
                 <li className="nav-item lead">
-                  <NavLink href={process.env.PUBLIC_URL + '/#usagethird'}>
-                    <span style={{ color: color }}>3</span>
+                  <NavLink href={process.env.PUBLIC_URL + '/#sns'}>
+                    <span>SNS</span>
                   </NavLink>
                 </li>
               </ul>
             </div>
-          </>
-        )}
+          )}
+        </div>
       </nav>
     </>
   )

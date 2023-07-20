@@ -1,0 +1,186 @@
+.title {
+  height: 100vh;
+  left: 0;
+  right: 0;
+  color: #fff;
+  text-align: center;
+  margin-top: 0px;
+  z-index: -999;
+}
+
+.bgstyle {
+  background-color: #f8ce94;
+  -webkit-animation: BackgroundAnimation 30s ease infinite;
+  -moz-animation: BackgroundAnimation 30s ease infinite;
+  -o-animation: BackgroundAnimation 30s ease infinite;
+  animation: BackgroundAnimation 30s ease infinite;
+  height: 100vh;
+}
+
+.music {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.overlay {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @media screen and (min-width: 768px) {
+    top: 47%;
+  }
+}
+
+.top-font-style {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: 'Monoton', cursive;
+  color: #feb84c;
+  @media screen and (max-width: 767px) {
+    font-size: 5rem;
+    font-weight: 400;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    font-size: 6rem;
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1366px) {
+    font-size: 8rem;
+  }
+  @media screen and (min-width: 1367px) {
+    font-size: 8rem;
+  }
+}
+
+.sub-font-container {
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+  }
+}
+
+.sub-font-style {
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-weight: 500;
+  color: #f8ce94;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 767px) {
+    font-size: 1.1rem;
+  }
+  @media (min-width: 768px) {
+    margin-top: 1rem;
+  }
+}
+
+.btn-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-set {
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  color: #f8ce94;
+  border-color: #feb84c;
+  border-radius: 0.8rem;
+  font-size: 1.5rem;
+  &:hover {
+    background-color: #f8ce94;
+    border-color: #feb84c;
+    color: #181011;
+  }
+  @media (max-width: 767px) {
+    padding: 1rem;
+  }
+  @media (min-width: 768px) {
+    padding: 1.2rem;
+  }
+  @media (max-height: 500px) {
+    display: none;
+  }
+}
+
+.arrow-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.arrow-bellow {
+  color: #feb84c;
+  text-decoration: none;
+  font-size: 2.5rem;
+  animation: flash 1s linear infinite;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+// .arrow-underline {
+//   position: relative;
+//   display: block;
+//   width: 100%;
+//   height: 2rem;
+//   margin: 0 auto;
+//   text-align: center;
+//   &:before {
+//     content: '';
+//     position: absolute;
+//     top: 50%;
+//     left: 0;
+//     width: 100%;
+//     height: 0.1rem;
+//     background-color: #feb84c;
+//     transform: translateY(-50%);
+//   }
+//   &:after {
+//     content: '';
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     width: 0.8rem;
+//     height: 0.8rem;
+//   }
+// }

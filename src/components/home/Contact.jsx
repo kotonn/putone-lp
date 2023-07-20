@@ -1,20 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form'
 import emailjs from '@emailjs/browser'
-import { db } from '../../utils/firebase'
 import { collection, addDoc } from 'firebase/firestore'
-import { Jumbotron } from './migration'
-import { NavLink } from './migration'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { db } from '../../utils/firebase'
 
-const Contact = ({ gradient }) => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
-  const { register, handleSubmit, reset } = useForm()
+const Contact = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm()
 
   const onSubmit = async (data, e) => {
     e.preventDefault()
@@ -45,114 +41,62 @@ const Contact = ({ gradient }) => {
         }
       )
   }
-
   return (
-    <Jumbotron
-      fluid
-      id="home"
-      style={{
-        background: `linear-gradient(to bottom,${gradient})`,
-        backgroundSize: 'cover',
-      }}
-      className="title bg-transparent bgstyle text-light vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
-    >
-      <div className="toggler" onClick={toggleMenu}>
-        <div className="humberger-menu">
-          <div className="blob-effect-getstarted">
-            <span></span>
-            <span></span>
-            <div className="div-container" style={{ color: '#000' }}>
-              {!isOpen ? (
-                <FontAwesomeIcon icon={faBars} size="lg" />
-              ) : (
-                <FontAwesomeIcon icon={faTimes} size="lg" />
-              )}
-            </div>
-          </div>
-        </div>
-        {isOpen && (
-          <div
-            className="fullscreen-menu"
-            data-aos="fade-up"
-            data-aos-duration="300"
-            data-aos-delay="100"
-          >
-            <ul className="navbar-nav">
-              <li className="nav-item lead">
-                <NavLink href={process.env.PUBLIC_URL + '/#home'}>
-                  <span>ホーム</span>
-                </NavLink>
-              </li>
-              <li className="nav-item lead">
-                <NavLink href={process.env.PUBLIC_URL + '/#usagefirst'}>
-                  <span>使い方</span>
-                </NavLink>
-              </li>
-              <li className="nav-item lead">
-                <NavLink href={process.env.PUBLIC_URL + '/#usagesecond'}>
-                  <span>お問い合わせ</span>
-                </NavLink>
-              </li>
-
-              <li className="nav-item lead">
-                <NavLink href={process.env.PUBLIC_URL + '/#sns'}>
-                  <span>SNS</span>
-                </NavLink>
-              </li>
-            </ul>
-          </div>
-        )}
-      </div>
-      <h1
-        className="main-typography-form"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+    <>
+      <section
         id="contact"
-      >
-        Contact
-      </h1>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="contact-form-container"
+        className="contact-guide"
         data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-delay="1000"
+        data-aos-duration="300"
+        data-aos-delay="300"
       >
-        <div className="contact-form-contents">
-          <label className="contact-label">名前</label>
-          <input
-            {...register('user_name')}
-            type="text"
-            name="user_name"
-            className="contact-input-container"
-          />
+        <div className="contact-guide__container">
+          <div className="top-message__heading">
+            <h2 className="page-heading">
+              <div className="page-heading__content--center">
+                <div className="page-heading__text-main">お問い合わせ</div>
+                <div className="page-heading__text-sub">
+                  当アプリについてのご質問やご相談などお気軽にお問い合わせください。
+                </div>
+              </div>
+            </h2>
+          </div>
+          <div className="contact-guide__list">
+            <form onSubmit={handleSubmit(onSubmit)} className="contact__form">
+              <input
+                {...register('user_name', { required: true })}
+                className="form-control"
+                id="name"
+                name="user_name"
+                placeholder="Name"
+                type="text"
+              />
+              {errors.name && <span>This field is required</span>}
+              <input
+                {...register('user_email', { required: true })}
+                className="form-control"
+                id="email"
+                name="user_email"
+                placeholder="Email"
+                type="email"
+              />
+              {errors.email && <span>This field is required</span>}
+              <textarea
+                {...register('message', { required: true })}
+                className="form-control"
+                id="message"
+                name="message"
+                placeholder="Message"
+                rows="5"
+              ></textarea>
+              {errors.message && <span>This field is required</span>}
+              <input type="submit" value="送る" className="btn ac_btn" />
+            </form>
+          </div>
         </div>
-        <div className="contact-form-contents">
-          <label className="contact-label">メールアドレス</label>
-          <input
-            {...register('user_email')}
-            type="email"
-            name="user_email"
-            className="contact-input-container"
-          />
-        </div>
-        <div className="contact-form-contents">
-          <label className="contact-label">お問い合わせ内容</label>
-          <textarea
-            {...register('message')}
-            name="message"
-            className="contact-input-container-textarea"
-          />
-        </div>
-        <input type="submit" value="送る" className="contact-button" />
-      </form>
-    </Jumbotron>
+      </section>
+    </>
   )
-}
-
-Contact.propTypes = {
-  gradient: Jumbotron.propTypes.style,
 }
 
 export default Contact

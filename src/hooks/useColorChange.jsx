@@ -3,19 +3,15 @@ import { useScrollPosition } from './useScrollPosition'
 
 export function useColorChange() {
   const [scrollY, setScrollY] = useState(0)
-  const [backgroundColor, setBackgroundColor] = useState('')
+  const [backgroundColor, setBackgroundColor] = useState('rgba(0, 0, 0, 0.3)')
 
   useScrollPosition(({ currPos }) => {
     setScrollY(-currPos.y)
   }, [])
 
   useEffect(() => {
-    if (scrollY > 1000) {
-      setBackgroundColor('#FFFFFF')
-    } else {
-      const rgbValue = Math.floor((scrollY / 1000) * 255)
-      setBackgroundColor(`rgba(${rgbValue}, ${rgbValue}, ${rgbValue})`)
-    }
+    const opacity = 0.3 + (scrollY / 1000) * 0.4
+    setBackgroundColor(`rgba(0, 0, 0, ${Math.min(opacity, 0.8)})`)
   }, [scrollY])
 
   return backgroundColor

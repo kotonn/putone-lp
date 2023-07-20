@@ -1,0 +1,110 @@
+.top-news__container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.top-news__heading {
+  margin-bottom: 6.4rem;
+  @media screen and (max-width: 991px) {
+    margin-bottom: 3rem;
+  }
+}
+
+.top-news__list {
+  display: block;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 60vw;
+  @media screen and (max-width: 991px) {
+    max-width: 90vw;
+  }
+}
+
+.top-news__list-item {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.top-news__list-item:not(:first-child) {
+  margin-top: 1.6rem;
+  padding-top: 1.6rem;
+  border-top: 1px dashed antiquewhite;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media screen and (min-width: 992px) {
+  .news-item {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.news-item__container {
+  display: flex;
+  flex-direction: row;
+}
+
+.news-item__date {
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  color: #f8ce94;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2.5rem 0 0;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 992px) {
+  .news-item__date {
+    margin: 0 1.6rem 0 0;
+  }
+}
+
+.news-item__category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3.2rem 0 0;
+}
+
+@media screen and (min-width: 992px) {
+  .news-item__category {
+    margin: 0 1.6rem 0 0;
+  }
+}
+
+.news-item__category-label {
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 8rem;
+  padding: 0.3rem 0.4rem;
+  border: 1px solid #feb84c;
+  border-radius: 0.5rem;
+  color: antiquewhite;
+  font-size: 1rem;
+}
+
+.news-item__title {
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  &:hover {
+    color: #feb84c;
+  }
+  @media screen and (max-width: 991px) {
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,80 @@
+.top-message__container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10rem 2rem 8rem 2rem;
+}
+
+.top-message__heading {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 4rem;
+  }
+  @media screen and (min-width: 768px) {
+    margin-bottom: 5.5rem;
+  }
+}
+
+.page-heading__content--center {
+  text-align: center;
+}
+
+.page-heading__text-main {
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  color: antiquewhite;
+  @media screen and (max-width: 767px) {
+    font-size: 1.7rem;
+    font-weight: 600;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 2.3rem;
+    font-weight: 600;
+  }
+}
+
+.page-heading__text-main::after {
+  display: block;
+  padding-top: 2rem;
+  content: '';
+  margin: 0 auto;
+  @media screen and (max-width: 767px) {
+    max-width: 80vw;
+    border-bottom: 2px solid antiquewhite;
+  }
+  @media screen and (min-width: 768px) {
+    max-width: 30rem;
+    border-bottom: 3px solid antiquewhite;
+  }
+}
+
+.page-heading__text-sub {
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  color: antiquewhite;
+  font-weight: 500;
+  padding-top: 2.4rem;
+  @media (max-width: 767px) {
+    font-size: 1.2rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 1.3rem;
+  }
+}
+
+.top-message__content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.top-message__text {
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  color: antiquewhite;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-align: left;
+  @media (max-width: 767px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
+}

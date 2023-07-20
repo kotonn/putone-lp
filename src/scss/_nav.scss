@@ -1,0 +1,189 @@
+.fixed-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.navbar-transparent {
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color 0.2s;
+}
+
+.toggler {
+  margin-right: 1rem;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  &:focus {
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.humberger-menu {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  transition: 0.5s;
+  @media screen and (min-width: 768px) {
+    top: 2.5rem;
+    right: 2.5rem;
+  }
+}
+
+.blob-effect {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: 768px) {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.blob-effect span:nth-child(1) {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ffb800;
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  transition: 0.5s;
+  animation: rotate-blob 5s linear infinite;
+}
+
+.blob-effect span:nth-child(2) {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ffb800;
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  transition: 0.5s;
+  animation: rotate-blob 4s linear infinite;
+}
+
+@keyframes rotate-blob {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-blob2 {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.blob-effect-getstarted {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blob-effect-getstarted span:nth-child(1) {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  transition: 0.5s;
+  animation: rotate-blob 5s linear infinite;
+}
+
+.blob-effect-getstarted span:nth-child(2) {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  transition: 0.5s;
+  animation: rotate-blob 4s linear infinite;
+}
+
+@keyframes rotate-blob {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-blob2 {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.div-container {
+  position: relative;
+  color: #ffb800;
+  text-align: center;
+  transition: 0.5s;
+  z-index: 10000;
+}
+
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-item {
+  box-sizing: border-box;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  &:hover {
+    color: #feb84c;
+    transition: color, 0.2s;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 2.3rem;
+  }
+}

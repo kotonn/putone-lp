@@ -1,0 +1,134 @@
+.top-service__container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.top-service__heading {
+  margin-bottom: 6.4rem;
+  @media screen and (max-width: 991px) {
+    margin-bottom: 3rem;
+  }
+}
+
+.page-heading__content--center {
+  text-align: center;
+}
+
+// .top-service__list {
+//   background: #f8ce94;
+//   border-radius: 1rem;
+// }
+
+@media screen and (min-width: 992px) {
+  .top-service__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .top-service__list-item {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    margin: 0 1rem;
+  }
+}
+
+.top-service__list-item {
+  padding: 2.4rem 1.6rem;
+  @media screen and (max-width: 991px) {
+    padding: 2.4rem 0;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .top-service__list-item:not(:first-child) {
+    border-left: 1px dashed #aaaaaa;
+  }
+}
+
+// .service-feature-item__thumbnail {
+//   overflow: hidden;
+// }
+
+.service-feature-item__thumbnail-image {
+  @media screen and (max-width: 991px) {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100vh;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+  @media screen and (min-width: 992px) {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1rem;
+    width: 300px;
+  }
+}
+
+.service-feature-item__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.6rem;
+}
+
+.service-feature-item__content-title {
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  color: #feb84c;
+  margin-bottom: 1.6rem;
+  font-weight: 500;
+  font-size: 1.7rem;
+  text-align: center;
+  @media screen and (max-width: 991px) {
+    font-size: 1.5rem;
+  }
+}
+
+.service-feature-item__content-text {
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  color: antiquewhite;
+  font-size: 1.2rem;
+}
+
+.top-service__guide {
+  padding-top: 6.4rem;
+}
+
+.button-guide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: none;
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s, text-shadow 0.2s, background-color 0.2s,
+    border-color 0.2s, opacity 0.2s;
+  display: flex;
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1.6rem;
+  border: none;
+  border-radius: 8px;
+  background: #eeeeee;
+  color: #222222;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.button-guide:hover,
+.button-guide:focus {
+  background: #08aeb0;
+  color: #ffffff;
+}
