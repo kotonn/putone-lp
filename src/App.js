@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { mainBody } from './editable-stuff/config.js'
 import Aos from 'aos'
@@ -11,6 +11,7 @@ import Functions from './components/home/Functions.jsx'
 import News from './components/home/News.jsx'
 import Contact from './components/home/Contact.jsx'
 import Footer from './components/Footer.jsx'
+import { Bars } from 'react-loader-spinner'
 
 const Home = React.forwardRef((props, ref) => {
   return (
@@ -71,6 +72,17 @@ Home.displayName = 'Home'
 
 const App = () => {
   const titleRef = React.useRef()
+  const [loading, setLoading] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setFadeOut(true);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
+    }, 2000);
+  }, []);
 
   useEffect(() => {
     Aos.init({
@@ -79,6 +91,21 @@ const App = () => {
       easing: 'ease-out-sine',
     })
   }, [])
+
+  if (loading) {
+    return (
+      <div className={`loader ${fadeOut ? 'fade-out' : ''}`}>
+        <Bars
+          height="50"
+          width="50"
+          color="#ff914d"
+          ariaLabel="bars-loading"
+          wrapperClass="loader_spinner"
+          visible={true}
+        />
+      </div>
+    );
+  }
 
   return (
     <AuthProvider>

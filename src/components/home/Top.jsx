@@ -28,9 +28,6 @@ const Top = React.forwardRef(({ title, message }, ref) => {
         fluid
         id="home"
         className="title bg-transparent bgstyle text-light d-flex align-content-center align-items-center flex-wrap m-0"
-        data-aos="fade-up"
-        data-aos-duration="800"
-        data-aos-delay="800"
       >
         <Image
           src="home.jpg"
